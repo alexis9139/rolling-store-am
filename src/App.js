@@ -18,15 +18,6 @@ export default class App extends Component {
       <div className="App" >
         <header className="App-container">
           <Main userName={userName} />
-          {/* <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a> */}
-          {/* <Button type="primary">Primary</Button> */}
         </header>
       </div>
     );
