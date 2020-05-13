@@ -34,12 +34,20 @@ export default class App extends Component {
           brand: 'PS4',
           price: 4000
         }
-      ]
+      ],
+      results: [],
+      term: ''
     }
   }
 
+  updateTerm(term) {
+    this.setState({ term })
+  }
+
   render() {
-    const { userName, products } = this.state;
+    const { userName, products, term } = this.state;
+    //armo el bindeo
+    const updateTerm = this.updateTerm.bind(this);
     return (
       <Router>
         <Switch>
@@ -50,7 +58,12 @@ export default class App extends Component {
           </Route>
           <Route path="/" exact>
             <div className="App-container">
-              <Main userName={userName} products={products} />
+              <Main
+                userName={userName}
+                products={products}
+                updateTerm={updateTerm}
+                term={term}
+              />
             </div>
           </Route>
         </Switch>
