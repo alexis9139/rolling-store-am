@@ -5,8 +5,7 @@ import Main from './components/Main'
 
 export default class App extends Component {
   constructor(props) {
-    super(props);
-
+    super(props);//para poder usar el this
     this.state = {
       userName: 'Alexs'
     }

@@ -13,16 +13,25 @@ export default class Main extends Component {
             <Layout>
                 <Header className="header">
                     <Row>
-                        <Col xs={{ span: 5 }} lg={{ span: 3 }}><img src={logo} className="header-logo" alt="logo" />
+                        <Col xs={{ span: 5 }} lg={{ span: 3 }}>
+                            <img src={logo} className="header-logo" alt="logo" />
                         </Col>
-                        <Col xs={{ span: 19 }} lg={{ span: 16 }}><div className="header-search">
-                            <Search
-                                placeholder="que deseas buscar"
-                                onSearch={value => console.log(value)}
-                                enterButton
-                            />
-                        </div></Col>
-                        <Col xs={{ span: 0 }} lg={{ span: 5 }}>Bienvenido {userName}</Col>
+
+                        <Col xs={{ span: 19 }} lg={{ span: 16 }}>
+                            <div className="header-search">
+                                <Search
+                                    placeholder="¿Qué quieres comprar?"
+                                    onSearch={value => console.log(value)}//podemos escribir y veremos lo que consolea en tiempo real
+                                    enterButton
+                                />
+                            </div>
+                        </Col>
+
+                        <Col xs={{ span: 0 }} lg={{ span: 5 }}>
+                            <div className="header-greetings">
+                                Bienvenido  {userName}
+                            </div>
+                        </Col>
                     </Row>
                 </Header>
                 <Content className="content">
@@ -33,7 +42,7 @@ export default class Main extends Component {
                 <Footer className="footer">
                     Footer
                 </Footer>
-            </Layout >
+            </Layout>
 
         );
     }

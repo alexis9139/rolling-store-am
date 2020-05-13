@@ -29,7 +29,7 @@
 }
 .header-logo{
   height: 60px;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 .greetings {
   width: 120px;
