@@ -32,7 +32,7 @@ export default class App extends Component {
           id: 'prod03',
           name: 'juegos consola',
           brand: 'PS4',
-          price: 4500
+          price: 4000
         }
       ]
     }

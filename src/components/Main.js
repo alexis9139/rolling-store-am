@@ -2,11 +2,36 @@ import React, { Component } from 'react';
 import logo from '../logo.png';
 import { Layout, Input, Row, Col } from 'antd';
 import ProductCard from './ProductCard';
+import { Redirect } from 'react-router-dom';
+
 //destructuramos
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
 
 export default class Main extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            redirect: false
+        }
+        // this.setRedirect = this.setRedirect.bind(this)
+    }
+
+    // setRedirect() {
+    //     //hare un cambio de estado
+    //     this.setState({ redirect: true })
+    // }
+
+    setRedirect = () => {
+        this.setState({ redirect: true })
+    }
+
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to='/results' />
+        }
+    }
+
     render() {
         const { userName, products } = this.props
         return (
@@ -19,9 +44,10 @@ export default class Main extends Component {
 
                         <Col xs={{ span: 19 }} lg={{ span: 16 }}>
                             <div className="header-search">
+                                {this.renderRedirect()}
                                 <Search
                                     placeholder="¿Qué quieres comprar?"
-                                    onSearch={value => console.log(value)}//podemos escribir y veremos lo que consolea en tiempo real
+                                    onSearch={this.setRedirect}//podemos escribir y veremos lo que consolea en tiempo real
                                     enterButton
                                 />
                             </div>
