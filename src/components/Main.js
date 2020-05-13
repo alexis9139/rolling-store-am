@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
 import { Layout, Input, Row, Col } from 'antd';
-
+import ProductCard from './ProductCard';
 //destructuramos
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
 
 export default class Main extends Component {
     render() {
-        const { userName } = this.props
+        const { userName, products } = this.props
         return (
             <Layout>
                 <Header className="header">
@@ -35,9 +35,17 @@ export default class Main extends Component {
                     </Row>
                 </Header>
                 <Content className="content">
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                </p>
+                    <p>Basado en tu ultima visita</p>
+                    <Row>
+                        {
+                            products.map(prod => (
+                                <Col xs={{ span: 24 }} lg={{ span: 8 }}>
+                                    <ProductCard product={prod} />
+                                </Col>
+                            )
+                            )
+                        }
+                    </Row>
                 </Content>
                 <Footer className="footer">
                     Footer
