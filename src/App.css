@@ -3,9 +3,12 @@
   --secondary: #0F1626;
   --details: #FF533D;
   --text: #F5F5F5;
-  --test1: red;
+  --test1: hsl(0, 100%, 50%);
   --test2: blue;
   --test3: yellow;
+  --prueba1 :#abede1;
+  --prueba2:#1ab580;
+  --oscuro:#000000;
 }
 .App-logo {
   height: 40vmin;
@@ -43,6 +46,9 @@
 }
 .header{
   color: var(--text) !important;
+  /* position: 'fixed';
+  z-index: 1;
+  width: '100%'; */
 }
 
 .header-search{
@@ -58,19 +64,29 @@
 }
 
 .content {
-  background-color: var(--background);
+  background-color: var(--prueba1);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+  /* width: 100%; */
+  /* flex-grow: 1; */
+
 }
 .footer {
-  color: var(--text) !important;
-  background-color: var(--details) !important;
+  color: var(--oscuro) !important;
+  background-color: var(--prueba2) !important;
 }
 
 .product-card{
   background-color: var(--test1);
   margin: 10px;
   padding: 15px;
+}
+
+.img-carro{
+  width: 100%;
+  /* border: 1px solid black; */
+  height: 220px;
 }

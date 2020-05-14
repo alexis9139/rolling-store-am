@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
-import { Layout, Input, Row, Col } from 'antd';
-import ProductCard from './ProductCard';
-import { Redirect } from 'react-router-dom';
+import { Layout, Row, Col, Input } from 'antd';
+import { Redirect } from 'react-router-dom'
 
-//destructuramos
-const { Header, Content, Footer } = Layout;
+import ProductCard from './ProductCard';
+
+const { Header, Footer, Content } = Layout;
 const { Search } = Input;
+
 
 export default class Results extends Component {
     constructor(props) {
@@ -14,7 +15,6 @@ export default class Results extends Component {
         this.state = {
             redirect: false
         }
-        // this.setRedirect = this.setRedirect.bind(this)
     }
 
     setRedirect = () => {
@@ -22,12 +22,14 @@ export default class Results extends Component {
     }
 
     renderRedirect = () => {
+        console.log("redireccionar")
         if (this.state.redirect) {
             return <Redirect to='/' />
         }
     }
+
     render() {
-        const { userName, products } = this.props
+        const { userName, results, term } = this.props;
         return (
             <Layout>
                 <Header className="header">
@@ -36,34 +38,29 @@ export default class Results extends Component {
                             {this.renderRedirect()}
                             <img src={logo} className="header-logo" alt="logo" onClick={this.setRedirect} />
                         </Col>
-
                         <Col xs={{ span: 19 }} lg={{ span: 16 }}>
                             <div className="header-search">
                                 <Search
-                                    placeholder="¿Qué quieres comprar?"
-                                    onSearch={value => console.log(value)}//podemos escribir y veremos lo que consolea en tiempo real
+                                    placeholder={term}
+                                    onSearch={value => console.log(value)}
                                     enterButton
                                 />
                             </div>
                         </Col>
-
                         <Col xs={{ span: 0 }} lg={{ span: 5 }}>
-                            <div className="header-greetings">
-                                Bienvenido  {userName}
-                            </div>
+                            <div className="header-greetings">Bienvenido {userName}</div>
                         </Col>
                     </Row>
                 </Header>
                 <Content className="content">
-                    <p>Resultados</p>
+                    <p> Resultados la de busqueda </p>
                     <Row>
                         {
-                            products.map(prod => (
-                                <Col xs={{ span: 24 }} lg={{ span: 8 }}>
-                                    <ProductCard product={prod} />
+                            results.map(resul => (
+                                <Col xs={{ span: 24 }} lg={{ span: 24 }}>
+                                    <ProductCard key={resul.id} product={resul} />
                                 </Col>
-                            )
-                            )
+                            ))
                         }
                     </Row>
                 </Content>
@@ -71,7 +68,6 @@ export default class Results extends Component {
                     Footer
                 </Footer>
             </Layout>
-
-        );
+        )
     }
 }
