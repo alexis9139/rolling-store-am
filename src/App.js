@@ -4,6 +4,7 @@ import Main from './components/Main';
 import Results from './components/Results';
 import Cart from './components/Cart';
 import Success from './components/Success';
+import Product from './components/Product';
 
 //importacion de imagenes de los productos
 import img1 from './assets/img/juegos/imagen1.jpg';
@@ -110,6 +111,15 @@ export default class App extends Component {
           <Route path="/success">
             <div className="App-container">
               <Success userName={userName}
+              // results={results}
+              // term={term}
+              />
+            </div>
+          </Route>
+
+          <Route path="/product">
+            <div className="App-container">
+              <Product userName={userName}
               // results={results}
               // term={term}
               />

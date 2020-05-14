@@ -52,7 +52,7 @@ export default class Results extends Component {
                     </Row>
                 </Header>
                 <Content className="content">
-                    <p> Resultados la de busqueda </p>
+                    <p> Resultados la de Success </p>
                 </Content>
                 <Footer className="footer">
                     Footer
