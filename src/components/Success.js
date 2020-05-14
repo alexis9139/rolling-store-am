@@ -3,12 +3,14 @@ import logo from '../logo.png';
 import { Layout, Row, Col, Input } from 'antd';
 import { Redirect } from 'react-router-dom'
 
-const { Header, Content, Footer } = Layout
+
+const { Header, Footer, Content } = Layout;
 const { Search } = Input;
 
-export default class Success extends Component {
+
+export default class Results extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             redirect: false
         }
@@ -19,7 +21,7 @@ export default class Success extends Component {
     }
 
     renderRedirect = () => {
-        console.log("Redireccionando")
+        console.log("redireccionar")
         if (this.state.redirect) {
             return <Redirect to='/' />
         }
@@ -28,38 +30,34 @@ export default class Success extends Component {
     render() {
         const { userName, term } = this.props;
         return (
-            <div>
-                <Layout>
-                    <Header className="header">
-                        <Row>
-                            <Col xs={{ span: 5 }} lg={{ span: 3 }}>
-                                {this.renderRedirect()}
-                                <img src={logo} alt="logo" className="header-logo" onClick={this.setRedirect} />
-                            </Col>
-                            <Col xs={{ span: 19 }} lg={{ span: 16 }}>
-                                <div className="header-search">
-                                    <Search
-                                        placeholder={term}
-                                        onSearch={value => console.log(value)}
-                                        enterButton
-                                    />
-                                </div>
-                            </Col>
-                            <Col xs={{ span: 0 }} lg={{ span: 5 }}>
-                                <div className="header-greetings">Bienvenido {userName}</div>
-                            </Col>
-                        </Row>
-                    </Header>
-
-                    <Content className="content">
-                        <p>Resultado de Success</p>
-                    </Content>
-
-                    <Footer className="footer">
-                        Footer
-                    </Footer>
-                </Layout>
-            </div>
-        );
+            <Layout>
+                <Header className="header">
+                    <Row>
+                        <Col xs={{ span: 5 }} lg={{ span: 3 }}>
+                            {this.renderRedirect()}
+                            <img src={logo} className="header-logo" alt="logo" onClick={this.setRedirect} />
+                        </Col>
+                        <Col xs={{ span: 19 }} lg={{ span: 16 }}>
+                            <div className="header-search">
+                                <Search
+                                    placeholder={term}
+                                    onSearch={value => console.log(value)}
+                                    enterButton
+                                />
+                            </div>
+                        </Col>
+                        <Col xs={{ span: 0 }} lg={{ span: 5 }}>
+                            <div className="header-greetings">Bienvenido {userName}</div>
+                        </Col>
+                    </Row>
+                </Header>
+                <Content className="content">
+                    <p> Resultados la de busqueda </p>
+                </Content>
+                <Footer className="footer">
+                    Footer
+                </Footer>
+            </Layout>
+        )
     }
 }
