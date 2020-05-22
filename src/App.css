@@ -116,7 +116,7 @@
   background-color: white;
   margin: 0px;
   padding: 50px;
-  height: 600px;
+  height: 380px;
 }
 
 .producto-info-imagen{
@@ -124,7 +124,7 @@
 }
 .producto-info-imagen-dimensiones{
   width: 730px;
-  height: 500px;
+  height: 411px;
 
 }
 
@@ -147,7 +147,7 @@
 
 
 
-
+/* 
 
 @media (max-width: 575.98px) { 
   .cuadro-categorias{
@@ -199,11 +199,11 @@
     margin: 1px;
     width: 20%;
   }
-}
+} */
 
 
 .estilo-corousel{
   padding: 0px;
   margin: 0px;
-  justify-content: space-around;
+  /* justify-content: ; */
 }

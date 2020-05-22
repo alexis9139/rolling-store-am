@@ -37,36 +37,33 @@ export default class ProductInfo extends Component {
         return imagen;
     }
     render() {
-        const { name, brand, price, id } = this.props.product[0];
+        const { name, brand, price, id, video } = this.props.product[0];
         return (
             <Layout>
                 <Row justify="center" className="producto-info">
                     <Col xs={{ span: 24 }} lg={{ span: 14 }} className="producto-info-imagen">
                         <Magnifier
+                            className="producto-info-imagen-dimensiones"
                             imageSrc={this.getPhoto(id)}
                             imageAlt="Example"
                             largeImageSrc={this.getPhoto(id)} // Optional
-                        // mouseActivation={MOUSE_ACTIVATION.DOUBLE_CLICK} // Optional
-                        // touchActivation={TOUCH_ACTIVATION.DOUBLE_TAP} // Optional
+
                         />
                         {/* <img src={this.getPhoto(id)} alt="" className="producto-info-imagen-dimensiones" /> */}
                         {/* <p>{brand}</p> */}
                     </Col>
 
                     <Col xs={{ span: 24 }} lg={{ span: 10 }} className="producto-info-descripcion">
-                        <p>{brand} <HeartTwoTone twoToneColor="#a0d911" /></p>
-                        <p>{name}</p>
-                        <p>${price}</p>
-                        <Puntaje />
-                        {/* <p><ShareAltOutlined /></p> */}
+                        <span>{brand} | {name} | ${price}</span>
+                        <p><Puntaje /> - <HeartTwoTone twoToneColor="#a0d911" /></p>
                         <WhatsApp />
-                        <Video />
+                        <Video video={video} />
                         <p></p>
-                        <Collapse bordered={false} defaultActiveKey={['0']}>
+                        {/* <Collapse bordered={false} defaultActiveKey={['0']}>
                             <Panel header="Toca para ver la descripcion del producto" key="1">
                                 {text}
                             </Panel>
-                        </Collapse>
+                        </Collapse> */}
                         <Button type="primary" shape="round" icon={<SmileOutlined />}>
                             Comprar
                         </Button>

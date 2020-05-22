@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import YouTube from 'react-youtube';
 
-const videoIdA = 'Q_v3ttvCVfA';
-const videoIdB = '-DX3vJiqxm4';
 
-function Example() {
+
+function Example(props) {
+    const videoIdA = props.video;
+    const videoIdB = '-DX3vJiqxm4';
     const [videoId, setVideoId] = useState(videoIdA);
     const [player, setPlayer] = useState(null);
 

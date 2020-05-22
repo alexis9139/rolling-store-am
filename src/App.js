@@ -57,6 +57,7 @@ export default class App extends Component {
           name: child.val().name,
           brand: child.val().brand,
           price: child.val().price,
+          video: child.val().video,
           id: child.val().id,
         });
       })
@@ -153,7 +154,7 @@ export default class App extends Component {
           </Route>
         </Switch>
         {/* <Categorias /> */}
-        <Caro></Caro>
+        {/* <Caro></Caro> */}
         <CustomFooter />
       </Router>
     );
