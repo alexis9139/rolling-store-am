@@ -30,6 +30,7 @@ export default class Results extends Component {
 
     render() {
         const { userName, results, term } = this.props;
+
         return (
             <Layout>
                 <Header className="header">
@@ -52,6 +53,7 @@ export default class Results extends Component {
                         </Col>
                     </Row>
                 </Header>
+
                 <Content className="content">
                     <p> Resultados la de busqueda </p>
                     <Row>
@@ -64,6 +66,7 @@ export default class Results extends Component {
                         }
                     </Row>
                 </Content>
+
                 <Footer className="footer">
                     Footer
                 </Footer>

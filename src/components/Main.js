@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
-import { Layout, Input, Row, Col } from 'antd';
-import ProductCard from './ProductCard';
-import { Redirect } from 'react-router-dom';
-import Carros from '../common/Carousel';
+import { Layout, Row, Col, Input } from 'antd';
+import { Redirect } from 'react-router-dom'
 
-//destructuramos
-const { Header, Content, Footer } = Layout;
+import ProductCard from './ProductCard';
+
+const { Header, Footer, Content } = Layout;
 const { Search } = Input;
 
 export default class Main extends Component {
@@ -17,30 +16,24 @@ export default class Main extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.updateList = this.props.updateList.bind(this);
-        // this.setRedirect = this.setRedirect.bind(this)
     }
-
-    // setRedirect() {
-    //     //hare un cambio de estado
-    //     this.setState({ redirect: true })
-    // }
 
     setRedirect = () => {
         this.setState({ redirect: true })
     }
 
     renderRedirect = () => {
+        console.log("redireccionar")
         if (this.state.redirect) {
             return <Redirect to='/results' />
         }
     }
 
-
     handleSearch(term) {
-        //hara la busqueda como el redireccionamiento
         const localTerm = term;
         let currentProducts = [];
         let newProducts = [];
+
         if (localTerm !== '') {
             currentProducts = this.props.products;
             newProducts = currentProducts.filter(item => {
@@ -52,65 +45,59 @@ export default class Main extends Component {
         } else {
             newProducts = this.props.products;
         }
+
         this.setRedirect();
     }
 
     handleChange(e) {
-        let term = e.target.value;//aqui tengo el valor de la tecla que presiono
-        //llamo a la ejecucion del updateTerm
+        let term = e.target.value;
         this.props.updateTerm(term)
     }
 
     render() {
-        const { userName, products } = this.props
+        const { userName, products } = this.props;
+
         return (
             <Layout>
-                <Header className="header" style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+                <Header className="header">
                     <Row>
                         <Col xs={{ span: 5 }} lg={{ span: 3 }}>
                             <img src={logo} className="header-logo" alt="logo" />
                         </Col>
-
                         <Col xs={{ span: 19 }} lg={{ span: 16 }}>
                             <div className="header-search">
                                 {this.renderRedirect()}
                                 <Search
-                                    placeholder="¿Qué quieres comprar?"
-                                    onSearch={() => this.handleSearch(this.props.term)}//podemos escribir y veremos lo que consolea en tiempo real
+                                    placeholder="¿Que queres comprar?"
+                                    onSearch={() => this.handleSearch(this.props.term)}
                                     onChange={this.handleChange}
                                     enterButton
                                 />
                             </div>
                         </Col>
-
                         <Col xs={{ span: 0 }} lg={{ span: 5 }}>
-                            <div className="header-greetings">
-                                Bienvenido  {userName}
-                            </div>
+                            <div className="header-greetings">Bienvenido {userName}</div>
                         </Col>
                     </Row>
                 </Header>
-                {/* Implementacion del carousel */}
-                <Carros></Carros>
 
                 <Content className="content">
-                    <p>Basado en tu ultima visita</p>
+                    <p> Basado en tu última visita </p>
                     <Row>
                         {
                             products.map(prod => (
-                                <Col xs={{ span: 24 }} lg={{ span: 6 }}>
-                                    <ProductCard product={prod} />
+                                <Col xs={{ span: 24 }} lg={{ span: 8 }}>
+                                    <ProductCard key={prod.id} product={prod} />
                                 </Col>
-                            )
-                            )
+                            ))
                         }
                     </Row>
                 </Content>
+
                 <Footer className="footer">
-                    2020 VentaYA. All Rights Reserved
+                    Footer
                 </Footer>
             </Layout>
-
-        );
+        )
     }
 }

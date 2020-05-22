@@ -9,6 +9,7 @@
   --prueba1 :#abede1;
   --prueba2:#1ab580;
   --oscuro:#000000;
+  --gris:#f5f5f5;
 }
 .App-logo {
   height: 40vmin;
@@ -46,6 +47,8 @@
 }
 .header{
   color: var(--text) !important;
+  /* width: 100%; */
+  /* background-color: white; */
   /* position: 'fixed';
   z-index: 1;
   width: '100%'; */
@@ -70,6 +73,7 @@
   justify-content: center;
   align-items: center;
   
+  
   /* width: 100%; */
   /* flex-grow: 1; */
 
@@ -80,13 +84,118 @@
 }
 
 .product-card{
-  background-color: var(--test1);
+  background-color: var(--gris);
   margin: 10px;
   padding: 15px;
+  height: 280px;
+  border: 0px solid black;
+  color: black;
+  font-family: 'Dancing Script', cursive;
+  padding: 0;
+}
+
+.imagen-alto{
+  height: 350px;
+  height: 150px;
+  border: 1px solid black;
+
 }
 
 .img-carro{
   width: 100%;
   /* border: 1px solid black; */
-  height: 220px;
+  height: 150px;
+}
+
+.descripcion-producto{
+  text-align: center;
+}
+
+
+.producto-info{
+  background-color: white;
+  margin: 0px;
+  padding: 50px;
+  height: 600px;
+}
+
+.producto-info-imagen{
+  background-color: black;
+}
+.producto-info-imagen-dimensiones{
+  width: 730px;
+  height: 500px;
+
+}
+
+.producto-info-descripcion{
+  background-color: green;
+  text-align: left;
+  padding: 50px;
+  background-color: #c9d2d6;
+  color: black;
+}
+
+
+.cuadro-categorias{
+  height: 250px;
+  background-color: black;
+  color: white;
+  margin: 0px;
+}
+
+
+
+
+
+@media (max-width: 575.98px) { 
+  .cuadro-categorias{
+    height: 250px;
+    background-color: white;
+    color: white;
+    margin: 20px;
+    width: 20%;
+  }
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+  .cuadro-categorias{
+    height: 250px;
+    background-color: blue;
+    color: white;
+    margin: 1px;
+    width: 20%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  .cuadro-categorias{
+    height: 250px;
+    background-color: red;
+    color: white;
+    margin: 1px;
+    width: 20%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .cuadro-categorias{
+    height: 250px;
+    background-color: green;
+    color: white;
+    margin: 1px;
+    width: 20%;
+  }
+}
+
+
+@media (min-width: 1200px) {  
+  .cuadro-categorias{
+    height: 250px;
+    background-color: black;
+    color: white;
+    margin: 1px;
+    width: 20%;
+  }
 }
