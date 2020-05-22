@@ -200,3 +200,10 @@
     width: 20%;
   }
 }
+
+
+.estilo-corousel{
+  padding: 0px;
+  margin: 0px;
+  justify-content: space-around;
+}

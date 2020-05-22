@@ -9,6 +9,7 @@ import ProductInfo from './pages/ProductInfo';
 import CustomFooter from './components/CustomFooter';
 import CustomHeader from './components/CustomHeader';
 import Categorias from './components/Categorias';
+import Caro from './components/Caro';
 
 import {
   BrowserRouter as Router,
@@ -99,6 +100,9 @@ export default class App extends Component {
           saludar={saludar}
         />
 
+
+
+
         <Switch>
           <Route path="/results">
             <div className='App-container'>
@@ -148,7 +152,8 @@ export default class App extends Component {
             </div>
           </Route>
         </Switch>
-        <Categorias />
+        {/* <Categorias /> */}
+        <Caro></Caro>
         <CustomFooter />
       </Router>
     );
