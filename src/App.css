@@ -131,9 +131,10 @@
 .producto-info-descripcion{
   background-color: green;
   text-align: left;
-  padding: 50px;
+  padding: 10px;
   background-color: #c9d2d6;
   color: black;
+  font-size: 15px;
 }
 
 

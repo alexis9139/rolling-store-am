@@ -4,7 +4,7 @@ import Puntaje from '../components/Puntaje';
 import { Button } from 'antd';
 import { HeartTwoTone, SmileOutlined, ShareAltOutlined } from '@ant-design/icons';
 import WhatsApp from '../components/ShareWhatsApp';
-
+import Video from '../components/Video';
 const { Content } = Layout;
 
 //COLAPSABLE DESCRIPCION
@@ -40,8 +40,9 @@ export default class ProductInfo extends Component {
                         <p>{name}</p>
                         <p>${price}</p>
                         <Puntaje />
-                        <p><ShareAltOutlined /></p>
+                        {/* <p><ShareAltOutlined /></p> */}
                         <WhatsApp />
+                        <Video />
                         <p></p>
                         <Collapse bordered={false} defaultActiveKey={['0']}>
                             <Panel header="Toca para ver la descripcion del producto" key="1">
