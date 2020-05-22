@@ -5,6 +5,17 @@ import { Button } from 'antd';
 import { HeartTwoTone, SmileOutlined, ShareAltOutlined } from '@ant-design/icons';
 import WhatsApp from '../components/ShareWhatsApp';
 import Video from '../components/Video';
+import {
+    Magnifier,
+    GlassMagnifier,
+    SideBySideMagnifier,
+    PictureInPictureMagnifier,
+    MOUSE_ACTIVATION,
+    TOUCH_ACTIVATION,
+    MagnifierContainer,
+    MagnifierPreview,
+    MagnifierZoom
+} from "react-image-magnifiers";
 const { Content } = Layout;
 
 //COLAPSABLE DESCRIPCION
@@ -31,7 +42,14 @@ export default class ProductInfo extends Component {
             <Layout>
                 <Row justify="center" className="producto-info">
                     <Col xs={{ span: 24 }} lg={{ span: 14 }} className="producto-info-imagen">
-                        <img src={this.getPhoto(id)} alt="" className="producto-info-imagen-dimensiones" />
+                        <Magnifier
+                            imageSrc={this.getPhoto(id)}
+                            imageAlt="Example"
+                            largeImageSrc={this.getPhoto(id)} // Optional
+                        // mouseActivation={MOUSE_ACTIVATION.DOUBLE_CLICK} // Optional
+                        // touchActivation={TOUCH_ACTIVATION.DOUBLE_TAP} // Optional
+                        />
+                        {/* <img src={this.getPhoto(id)} alt="" className="producto-info-imagen-dimensiones" /> */}
                         {/* <p>{brand}</p> */}
                     </Col>
 
