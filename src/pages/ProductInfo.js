@@ -3,6 +3,7 @@ import { Layout, Row, Col, Collapse } from 'antd';
 import Puntaje from '../components/Puntaje';
 import { Button } from 'antd';
 import { HeartTwoTone, SmileOutlined, ShareAltOutlined } from '@ant-design/icons';
+import WhatsApp from '../components/ShareWhatsApp';
 
 const { Content } = Layout;
 
@@ -40,6 +41,7 @@ export default class ProductInfo extends Component {
                         <p>${price}</p>
                         <Puntaje />
                         <p><ShareAltOutlined /></p>
+                        <WhatsApp />
                         <p></p>
                         <Collapse bordered={false} defaultActiveKey={['0']}>
                             <Panel header="Toca para ver la descripcion del producto" key="1">
