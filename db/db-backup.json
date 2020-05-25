@@ -1,0 +1,94 @@
+{
+    "products": {
+        "prod01": {
+            "brand": "PS4",
+            "id": "prod01",
+            "name": "FIFA2020",
+            "price": 19000,
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab nam ducimus excepturi nesciunt magnam facere sequi quia voluptatem impedit natus accusantium at qui, totam repellendus sed labore nobis et consequatur.",
+            "shippingTime": "2 días",
+            "video": "vgQNOIhRsV4"
+        },
+        "prod02": {
+            "brand": "PS4",
+            "id": "prod02",
+            "name": "Gow Of Wars 4",
+            "price": 3500,
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab nam ducimus excepturi nesciunt magnam facere sequi quia voluptatem impedit natus accusantium at qui, totam repellendus sed labore nobis et consequatur.",
+            "shippingTime": "3 días",
+            "video": "K0u_kAWLJOA"
+        },
+        "prod03": {
+            "brand": "PS4",
+            "id": "prod03",
+            "name": "Cyberpunk 2077",
+            "price": 4000,
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab nam ducimus excepturi nesciunt magnam facere sequi quia voluptatem impedit natus accusantium at qui, totam repellendus sed labore nobis et consequatur.",
+            "shippingTime": "5 días",
+            "video": "ae_nItdzyRs"
+        },
+        "prod04": {
+            "brand": "PS4",
+            "id": "prod04",
+            "name": "The last of us",
+            "price": 4000,
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab nam ducimus excepturi nesciunt magnam facere sequi quia voluptatem impedit natus accusantium at qui, totam repellendus sed labore nobis et consequatur.",
+            "shippingTime": "2 días",
+            "video": "cvnmQdGetZE"
+        },
+        "prod05": {
+            "brand": "PS4",
+            "id": "prod05",
+            "name": "DBZ Kakaroto",
+            "price": 4000,
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab nam ducimus excepturi nesciunt magnam facere sequi quia voluptatem impedit natus accusantium at qui, totam repellendus sed labore nobis et consequatur.",
+            "shippingTime": "1 semana",
+            "video": "E9fzH_qhqFU"
+        },
+        "prod06": {
+            "brand": "PS4",
+            "id": "prod06",
+            "name": "Mortal Kombat 11",
+            "price": 4000,
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab nam ducimus excepturi nesciunt magnam facere sequi quia voluptatem impedit natus accusantium at qui, totam repellendus sed labore nobis et consequatur.",
+            "shippingTime": "6 días",
+            "video": "4ANaKFnOOjk"
+        },
+        "prod07": {
+            "brand": "PS4",
+            "id": "prod07",
+            "name": "Ghost of Tsushima",
+            "price": 4000,
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab nam ducimus excepturi nesciunt magnam facere sequi quia voluptatem impedit natus accusantium at qui, totam repellendus sed labore nobis et consequatur.",
+            "shippingTime": "12 días",
+            "video": "Zbq7BnsQhrw"
+        },
+        "prod08": {
+            "brand": "PS4",
+            "id": "prod08",
+            "name": "FINAL FANTASY XV",
+            "price": 4000,
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab nam ducimus excepturi nesciunt magnam facere sequi quia voluptatem impedit natus accusantium at qui, totam repellendus sed labore nobis et consequatur.",
+            "shippingTime": "3 días",
+            "video": "CNM6o9um1dc"
+        },
+        "prod09": {
+            "brand": "PS4",
+            "id": "prod09",
+            "name": "Resident Evil 3",
+            "price": 4000,
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab nam ducimus excepturi nesciunt magnam facere sequi quia voluptatem impedit natus accusantium at qui, totam repellendus sed labore nobis et consequatur.",
+            "shippingTime": "1 día",
+            "video": "vXM0VzI2N4U"
+        },
+        "prod10": {
+            "brand": "PS4",
+            "id": "prod10",
+            "name": "Red Dead Redemption 2",
+            "price": 4000,
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab nam ducimus excepturi nesciunt magnam facere sequi quia voluptatem impedit natus accusantium at qui, totam repellendus sed labore nobis et consequatur.",
+            "shippingTime": "2 días",
+            "video": "BkEXJk6ZAf0"
+        }
+    }
+}

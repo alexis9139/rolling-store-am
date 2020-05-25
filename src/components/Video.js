@@ -6,7 +6,7 @@ import YouTube from 'react-youtube';
 
 function Example(props) {
     const videoIdA = props.video;
-    const videoIdB = '-DX3vJiqxm4';
+    // const videoIdB = '-DX3vJiqxm4';
     const [videoId, setVideoId] = useState(videoIdA);
     const [player, setPlayer] = useState(null);
 
@@ -16,17 +16,17 @@ function Example(props) {
         setPlayer(event.target);
     };
 
-    const onPlayVideo = () => {
-        player.playVideo();
-    };
+    // const onPlayVideo = () => {
+    //     player.playVideo();
+    // };
 
-    const onPauseVideo = () => {
-        player.pauseVideo();
-    };
+    // const onPauseVideo = () => {
+    //     player.pauseVideo();
+    // };
 
-    const onChangeVideo = () => {
-        setVideoId(videoId === videoIdA ? videoIdB : videoIdA);
-    };
+    // const onChangeVideo = () => {
+    //     setVideoId(videoId === videoIdA ? videoIdB : videoIdA);
+    // };
 
     const opts = {
         height: '200',
