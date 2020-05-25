@@ -179,3 +179,7 @@
   color: var(--text) !important;
   background-color: var(--details) !important;
 }
+
+.pagina404{
+  font-size: 25px;
+}

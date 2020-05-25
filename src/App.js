@@ -13,6 +13,14 @@ import {
   Route,
 } from "react-router-dom";
 import { firebaseApp } from './Firebase';
+import Error404 from './pages/Error404';
+
+
+const NoMatchPage = () => {
+  return (
+    <Error404></Error404>
+  );
+};
 
 export default class App extends Component {
   constructor(props) {
@@ -87,12 +95,16 @@ export default class App extends Component {
     })
   }
 
+
+
+
   render() {
     const { username, products, term, results } = this.state;
     const updateTerm = this.updateTerm.bind(this);
     const updateList = this.updateList.bind(this);
     const updateCart = this.updateCart.bind(this);
     const saludar = this.saludar.bind(this);
+
 
     return (
       <Router>
@@ -106,7 +118,7 @@ export default class App extends Component {
         />
 
         <Switch>
-          <Route path="/results">
+          <Route exact path="/results">
             <div className='App-container'>
               <Results
                 results={results}
@@ -114,7 +126,7 @@ export default class App extends Component {
             </div>
           </Route>
 
-          <Route
+          <Route exact
             path="/product/:id"
             render={props =>
               <div className='App-container'>
@@ -123,7 +135,7 @@ export default class App extends Component {
             }>
           </Route>
 
-          <Route
+          <Route exact
             path="/cart"
             render={props =>
               <div className='App-container'>
@@ -132,20 +144,22 @@ export default class App extends Component {
             }>
           </Route>
 
-          <Route path="/success">
+          <Route exact path="/success">
             <div className='App-container'>
               <Success
               />
             </div>
           </Route>
 
-          <Route path="/">
+          <Route exact path="/">
             <div className='App-container'>
               <Main
                 products={products}
               />
             </div>
+            {/* PAGINA ERROR */}
           </Route>
+          <Route component={NoMatchPage} />
         </Switch>
 
         <CustomFooter />
