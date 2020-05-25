@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 import { firebaseApp } from './Firebase';
 import Error404 from './pages/Error404';
+import 'react-credit-cards/es/styles-compiled.css';
 
 
 const NoMatchPage = () => {
@@ -157,6 +158,7 @@ export default class App extends Component {
                 products={products}
               />
             </div>
+
             {/* PAGINA ERROR */}
           </Route>
           <Route component={NoMatchPage} />

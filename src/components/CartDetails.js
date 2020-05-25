@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Radio, Input, Button } from 'antd';
+import Credit from './CreditCard';
 const { Group } = Radio;
 
 export default class CartDetails extends Component {
     state = {
         creditCard: '',
-        shippingAddress: ''
+        shippingAddress: '',
     }
 
     onWriteAddress = e => {
@@ -20,12 +21,10 @@ export default class CartDetails extends Component {
         const { creditCard, shippingAddress } = this.state
         const { product, updateCart } = this.props
         const radioStyle = { display: 'block' }
-
         return (
             <div className="cartDetails">
                 <p>¿Donde queres recibir tu compra?</p>
                 <Input value={shippingAddress} onChange={this.onWriteAddress} />
-
                 <p>¿Que tarjeta querés usar?</p>
                 <Group value={creditCard} onChange={this.onSelectCreditCard}>
                     <Radio value='visa' style={radioStyle}>
@@ -34,11 +33,11 @@ export default class CartDetails extends Component {
                     <Radio value='mastercard' style={radioStyle}>
                         <p style={{ color: 'white' }}>MasterCard</p>
                     </Radio>
+                    {/* <Credit></Credit> */}
                 </Group>
-
                 <Button onClick={() => updateCart(product, creditCard, shippingAddress)}>
                     Confirmar compra
-        </Button>
+                </Button>
             </div>
         )
     }
