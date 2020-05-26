@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import ModalImage from "react-modal-image";
+import { FullscreenOutlined } from '@ant-design/icons';
 
 export default class ProductCard extends Component {
     getPhoto(prodId) {
@@ -39,6 +40,7 @@ export default class ProductCard extends Component {
                         <div>producto: {name} </div>
                         <div>marca: {brand} </div>
                         <div>precio: {price} </div>
+                        {/* <FullscreenOutlined style={{ fontSize: '50px', color: 'green' }} /> */}
                     </Link>
                 </div>
             </div>

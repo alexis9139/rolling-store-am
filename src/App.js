@@ -158,9 +158,9 @@ export default class App extends Component {
                 products={products}
               />
             </div>
-
-            {/* PAGINA ERROR */}
           </Route>
+
+          {/* PAGINA ERROR */}
           <Route component={NoMatchPage} />
         </Switch>
 

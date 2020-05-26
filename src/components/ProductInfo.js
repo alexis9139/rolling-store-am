@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Row, Col, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import WhatsApp from '../components/ShareWhatsApp';
+import GroupShare from '../components/GroupShare';
 import Video from '../components/Video';
 import { HeartTwoTone, SmileOutlined, ShareAltOutlined } from '@ant-design/icons';
 import Puntaje from '../components/Puntaje';
@@ -33,6 +34,7 @@ export default class ProductInfo extends Component {
                     <Row>
                         <Col xs={{ span: 24 }} lg={{ span: 12 }}>
                             <div className="productInfo-imageContainer">
+                                <p>{name}</p>
                                 {/* <img src={this.getPhoto(id)} className="product-image" style={{ height: '50vh' }} alt="product" /> */}
                                 {/* <Magnifier
                                     className="producto-info-imagen-dimensiones"
@@ -46,16 +48,24 @@ export default class ProductInfo extends Component {
                         <br />
                         <Col xs={{ span: 24 }} lg={{ span: 12 }}>
                             <div className="productInfo-description">
-                                <div>{`producto: ${name} "${brand}"`} </div>
+                                {/* <div>{`Producto: ${name} "${brand}"`} </div> */}
+                                <div>
+                                    <span>
+                                        <strong>Producto: </strong>{name}
+                                        <br />
+                                        <strong>Marca: </strong>{brand}
+                                    </span>
+                                </div>
                                 <Row>
-                                    <Col span={12}> <div>precio: {price} </div> </Col>
-                                    <Col span={12}> <div>llega en: {shippingTime} </div> </Col>
+                                    <Col span={12}> <div>$ {price} </div> </Col>
+                                    <Col span={12}> <div>Llega en: {shippingTime} </div> </Col>
                                 </Row>
                                 <br />
-                                <div style={{ textAlign: 'left' }}>descripción: {description}</div>
+                                <div style={{ textAlign: 'left' }}><strong>Descripción: </strong>{description}</div>
                                 <br />
                                 <p><Puntaje /> - <HeartTwoTone twoToneColor="#a0d911" /></p>
-                                <WhatsApp />
+                                {/* <WhatsApp /> */}
+                                <span><GroupShare /></span>
                                 <Video video={video} />
                                 <Link
                                     to={{

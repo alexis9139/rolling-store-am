@@ -1,62 +1,128 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Cards from 'react-credit-cards';
 
-function App() {
-    const [number, setNumber] = useState('')
-    const [name, setName] = useState('')
-    const [expiry, setExpiry] = useState('')
-    const [cvc, setCvc] = useState('')
-    const [focus, setFocus] = useState('')
+export default class PaymentForm extends React.Component {
+    state = {
+        cvc: '',
+        expiry: '',
+        focus: '',
+        name: '',
+        number: '',
+    };
 
-    return (
-        <div>
-            <Cards>
-                number={number}
-                name={name}
-                expiry={expiry}
-                cvc={cvc}
-                focused={focus}
+    handleInputFocus = (e) => {
+        this.setState({ focus: e.target.name });
+    }
+    handleInputChange = (e) => {
+        const { name, value } = e.target;
+        this.setState({ [name]: value });
+    }
 
-            </Cards>
-            <form>
-                <input
-                    type="tel"
-                    name='number'
-                    placeholder="Ingrese el numero de tarjeta"
-                    value={number}
-                    onChange={e => setNumber(e.target.value)}
-                    onFocus={e => setFocus(e.target.name)}
+    render() {
+        return (
+            <div id="PaymentForm">
+                <Cards
+                    cvc={this.state.cvc}
+                    expiry={this.state.expiry}
+                    focused={this.state.focus}
+                    name={this.state.name}
+                    number={this.state.number}
                 />
-
-                <input
-                    type="text"
-                    name='name'
-                    placeholder="Nombre"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                    onFocus={e => setFocus(e.target.name)}
-                />
-
-                <input
-                    type="text"
-                    name='expiry'
-                    placeholder="MM/YY"
-                    value={expiry}
-                    onChange={e => setExpiry(e.target.value)}
-                    onFocus={e => setFocus(e.target.name)}
-                />
-
-                <input
-                    type="tel"
-                    name='cvc'
-                    placeholder="CVC"
-                    value={cvc}
-                    onChange={e => setCvc(e.target.value)}
-                    onFocus={e => setFocus(e.target.name)}
-                />
-            </form>
-        </div>
-    )
+                <form>
+                    <input
+                        type="tel"
+                        name="number"
+                        placeholder="Card Number"
+                        onChange={this.handleInputChange}
+                        onFocus={this.handleInputFocus}
+                    />
+                    <input
+                        type="text"
+                        name='name'
+                        placeholder="Nombre"
+                        onChange={this.handleInputChange}
+                        onFocus={this.handleInputFocus}
+                    />
+                    <input
+                        type="text"
+                        name='expiry'
+                        placeholder="MM/YY"
+                        onChange={this.handleInputChange}
+                        onFocus={this.handleInputFocus}
+                    />
+                    <input
+                        type="tel"
+                        name='cvc'
+                        placeholder="CVC"
+                        onChange={this.handleInputChange}
+                        onFocus={this.handleInputFocus}
+                    />
+                </form>
+            </div>
+        );
+    }
 }
 
-export default App
+
+// import React, { useState } from 'react';
+// import Cards from 'react-credit-cards';
+
+// function App() {
+//     const [number, setNumber] = useState('')
+//     const [name, setName] = useState('')
+//     const [expiry, setExpiry] = useState('')
+//     const [cvc, setCvc] = useState('')
+//     const [focus, setFocus] = useState('')
+
+//     return (
+//         <div>
+//             <Cards>
+//                 number={number}
+//                 name={name}
+//                 expiry={expiry}
+//                 cvc={cvc}
+//                 focused={focus}
+
+//             </Cards>
+//             <form>
+//                 <input
+//                     type="tel"
+//                     name='number'
+//                     placeholder="Ingrese el numero de tarjeta"
+//                     value={number}
+//                     onChange={e => setNumber(e.target.value)}
+//                     onFocus={e => setFocus(e.target.name)}
+//                 />
+
+//                 <input
+//                     type="text"
+//                     name='name'
+//                     placeholder="Nombre"
+//                     value={name}
+//                     onChange={e => setName(e.target.value)}
+//                     onFocus={e => setFocus(e.target.name)}
+//                 />
+
+//                 <input
+//                     type="text"
+//                     name='expiry'
+//                     placeholder="MM/YY"
+//                     value={expiry}
+//                     onChange={e => setExpiry(e.target.value)}
+//                     onFocus={e => setFocus(e.target.name)}
+//                 />
+
+//                 <input
+//                     type="tel"
+//                     name='cvc'
+//                     placeholder="CVC"
+//                     value={cvc}
+//                     onChange={e => setCvc(e.target.value)}
+//                     onFocus={e => setFocus(e.target.name)}
+//                 />
+//             </form>
+//         </div>
+//     )
+// }
+
+// export default App

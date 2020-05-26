@@ -25,15 +25,15 @@ export default class CartDetails extends Component {
             <div className="cartDetails">
                 <p>¿Donde queres recibir tu compra?</p>
                 <Input value={shippingAddress} onChange={this.onWriteAddress} />
-                <p>¿Que tarjeta querés usar?</p>
+                <p>Por favor ingresa datos de tu tarjeta</p>
                 <Group value={creditCard} onChange={this.onSelectCreditCard}>
-                    <Radio value='visa' style={radioStyle}>
+                    {/* <Radio value='visa' style={radioStyle}>
                         <p style={{ color: 'white' }}>Visa</p>
                     </Radio>
                     <Radio value='mastercard' style={radioStyle}>
                         <p style={{ color: 'white' }}>MasterCard</p>
-                    </Radio>
-                    {/* <Credit></Credit> */}
+                    </Radio> */}
+                    <Credit></Credit>
                 </Group>
                 <Button onClick={() => updateCart(product, creditCard, shippingAddress)}>
                     Confirmar compra

@@ -153,11 +153,13 @@
   position: relative;
   background-color: white;
   filter: brightness(90%);
-  padding: 20px;
+  padding: 5px;
   min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: black;
+  text-align: center;
 }
 
 .productInfo-description {
@@ -195,3 +197,10 @@
   border-radius: .25rem;
   transition: border-color .15;
 }
+
+
+.grupo-share{
+  display: inline-flex;
+  flex-direction: row;
+}
+
