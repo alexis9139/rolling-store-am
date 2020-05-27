@@ -34,7 +34,7 @@ export default class ProductInfo extends Component {
                     <Row>
                         <Col xs={{ span: 24 }} lg={{ span: 12 }}>
                             <div className="productInfo-imageContainer">
-                                <p>{name}</p>
+                                {/* <p>{name}</p> */}
                                 {/* <img src={this.getPhoto(id)} className="product-image" style={{ height: '50vh' }} alt="product" /> */}
                                 {/* <Magnifier
                                     className="producto-info-imagen-dimensiones"
@@ -42,7 +42,7 @@ export default class ProductInfo extends Component {
                                     imageAlt="Example"
                                     largeImageSrc={this.getPhoto(id)} // Optional
                                 /> */}
-                                <SideBySideMagnifier className="producto-info-imagen-dimensiones" alwaysInPlace fillAlignTop fillAvailableSpace={true} imageSrc={this.getPhoto(id)} />
+                                <SideBySideMagnifier style={{ height: '500px' }} className="producto-info-imagen-dimensiones" alwaysInPlace fillAlignTop fillAvailableSpace={true} imageSrc={this.getPhoto(id)} />
                             </div>
                         </Col>
                         <br />

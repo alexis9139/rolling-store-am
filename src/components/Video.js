@@ -30,7 +30,7 @@ function Example(props) {
 
     const opts = {
         height: '200',
-        width: '500',
+        width: '460',
         playerVars: {
             // https://developers.google.com/youtube/player_parameters
             autoplay: 0,
