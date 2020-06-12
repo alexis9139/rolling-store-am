@@ -1,0 +1,94 @@
+{
+  "products" : {
+    "prod01" : {
+      "brand" : "PS4",
+      "description" : "FIFA 20 es un videojuego de simulación de fútbol desarrollado por EA Sports, como parte de la serie FIFA de Electronic Arts. ... Es el primer juego de la franquicia en no estar disponible para PS3 y Xbox 360, siendo FIFA 19 el último en salir para estas consolas.",
+      "id" : "prod01",
+      "name" : "FIFA2020",
+      "price" : 19000,
+      "shippingTime" : "2 días",
+      "video" : "vgQNOIhRsV4"
+    },
+    "prod02" : {
+      "brand" : "PS4",
+      "description" : "God of War (también referido como God of War 4) es un videojuego de acción-aventura desarrollado por SCE Santa Monica Studio y publicado por Sony Interactive Entertainment. ... ​ Se trata de la octava entrega de la serie de God of War, cronológicamente, y la secuela de God of War III.",
+      "id" : "prod02",
+      "name" : "Gow Of Wars 4",
+      "price" : 3500,
+      "shippingTime" : "3 días",
+      "video" : "K0u_kAWLJOA"
+    },
+    "prod03" : {
+      "brand" : "PS4",
+      "description" : "Cyberpunk 2077' es un RPG en el que se jugará juega en primera persona (a diferencia de 'The Witcher 3', que se juega en tercera). Podremos elegir entre los modos \"Solo\" (combate), \"Techie\" (en equipo) o \"Netrunner\" (jugar en red).",
+      "id" : "prod03",
+      "name" : "Cyberpunk 2077",
+      "price" : 4000,
+      "shippingTime" : "5 días",
+      "video" : "ae_nItdzyRs"
+    },
+    "prod04" : {
+      "brand" : "PS4",
+      "description" : "The Last of Us: Parte II es la secuela de la aventura de acción The Last of Us para PlayStation 4 a cargo de Naughty Dog y Sony protagonizada por Joel y Ellie. Cinco años después, nos espera una aventura intensa, dolorosa y cargada de emociones.",
+      "id" : "prod04",
+      "name" : "The last of us 2",
+      "price" : 4000,
+      "shippingTime" : "2 días",
+      "video" : "cvnmQdGetZE"
+    },
+    "prod05" : {
+      "brand" : "PS4",
+      "description" : "Dragon Ball Game Project Z: Action RPG es un nuevo videojuego de rol y acción basado en Dragon Ball para Xbox One, PC y PS4 que nos narrará las aventuras de Goku durante la saga de Dragon Ball Z. Según ha confirmado CyberConnect2, responsables del videojuego, el título se centra en una de las etapas doradas del manga y el anime, contándonos los eventos sucedidos en aquellos momentos de una forma inédita y muy espectacular.",
+      "id" : "prod05",
+      "name" : "DBZ Kakaroto",
+      "price" : 4000,
+      "shippingTime" : "1 semana",
+      "video" : "E9fzH_qhqFU"
+    },
+    "prod06" : {
+      "brand" : "PS4",
+      "description" : "Jugabilidad. Al igual que los dos juegos anteriores de la serie, \"Mortal Kombat 11\" es un videojuego de lucha 2.5D. Junto con el regreso de las Fatalities y Brutalities, se introducen nuevas características de juego, como Fatal Blows y Krushing Blows.",
+      "id" : "prod06",
+      "name" : "Mortal Kombat 11",
+      "price" : 4000,
+      "shippingTime" : "6 días",
+      "video" : "4ANaKFnOOjk"
+    },
+    "prod07" : {
+      "brand" : "PS4",
+      "description" : "Ghost of Tsushima, desarrollado por Sucker Punch y editado por Sony para PlayStation 4, es una aventura de acción ambientada en el Japón feudal y en el que un samurái trata de hacer frente a la invasión del ejército mongol en el año 1274.",
+      "id" : "prod07",
+      "name" : "Ghost of Tsushima",
+      "price" : 4000,
+      "shippingTime" : "12 días",
+      "video" : "Zbq7BnsQhrw"
+    },
+    "prod08" : {
+      "brand" : "PS4",
+      "description" : "Final Fantasy es una franquicia de medios creada por Hironobu Sakaguchi y desarrollada por Square Enix (antes conocida como Squaresoft). La franquicia se centra en una serie de fantasía y ciencia ficción de videojuegos RPG.",
+      "id" : "prod08",
+      "name" : "FINAL FANTASY XV",
+      "price" : 4000,
+      "shippingTime" : "3 días",
+      "video" : "CNM6o9um1dc"
+    },
+    "prod09" : {
+      "brand" : "PS4",
+      "description" : "Resident Evil 3​ —cuyo título original en Japón es Biohazard RE: 3—​ es un videojuego perteneciente al género de acción y aventura y horror de supervivencia, desarrollado y publicado por la empresa Capcom, se trata un nueva versión del videojuego homónimo de 1999 y sigue a los personajes de Jill Valentine y Carlos",
+      "id" : "prod09",
+      "name" : "Resident Evil 3",
+      "price" : 4000,
+      "shippingTime" : "1 día",
+      "video" : "vXM0VzI2N4U"
+    },
+    "prod10" : {
+      "brand" : "PS4",
+      "description" : "Red Dead Redemption 2 se trata de un western crepuscular. Nos lleva al comienzo del fin del Salvaje Oeste, cuando las bandas de forajidos sufren el acoso de la ley y los últimos grandes ladrones comienzan a rendirse, sucumbir al avance de la civilización o resistirse siendo asesinados.",
+      "id" : "prod10",
+      "name" : "Red Dead Redemption 2",
+      "price" : 4000,
+      "shippingTime" : "2 días",
+      "video" : "BkEXJk6ZAf0"
+    }
+  }
+}
