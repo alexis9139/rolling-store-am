@@ -52,6 +52,7 @@ import {
     WorkplaceIcon,
 } from "react-share";
 export default class GroupShare extends Component {
+
     render() {
         return (
             <span className="grupo-share">

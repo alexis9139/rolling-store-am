@@ -17,16 +17,18 @@ import {
     MagnifierPreview,
     MagnifierZoom
 } from "react-image-magnifiers";
+import PropTypes from 'prop-types';
 
 
-export default class ProductInfo extends Component {
+
+class ProductInfo extends Component {
     getPhoto(prodId) {
         return `https://firebasestorage.googleapis.com/v0/b/rolling-store-am.appspot.com/o/products%2F${prodId}.png?alt=media`
     }
 
     render() {
         const { name, brand, price, id, description, shippingTime, video } = this.props.product;
-        const { product } = this.props;
+        const { product, onAddToCartClicked } = this.props;
 
         return (
             <Fragment>
@@ -73,7 +75,7 @@ export default class ProductInfo extends Component {
                                         state: { product }
                                     }}
                                 >
-                                    <Button>Comprar</Button>
+                                    <Button onClick={onAddToCartClicked}>Comprar</Button>
                                 </Link>
                             </div>
                         </Col>
@@ -83,3 +85,17 @@ export default class ProductInfo extends Component {
         )
     }
 }
+
+ProductInfo.propTypes = {
+    product: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        brand: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        id: PropTypes.number.isRequired,
+        description: PropTypes.string.isRequired,
+        shippingTime: PropTypes.string.isRequired,
+    }),
+    onAddToCartClicked: PropTypes.func.isRequired
+}
+
+export default ProductInfo
