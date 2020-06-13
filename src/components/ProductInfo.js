@@ -67,7 +67,7 @@ class ProductInfo extends Component {
                                 <br />
                                 <p><Puntaje /> - <HeartTwoTone twoToneColor="#a0d911" /></p>
                                 {/* <WhatsApp /> */}
-                                <span><GroupShare /></span>
+                                <span><GroupShare id={id} /></span>
                                 <Video video={video} />
                                 <Link
                                     to={{

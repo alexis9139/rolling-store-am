@@ -52,14 +52,19 @@ import {
     WorkplaceIcon,
 } from "react-share";
 export default class GroupShare extends Component {
-
+    getId(prodId) {
+        return `http://localhost:3000/product/${prodId}`
+    }
     render() {
+        // const { id } = this.props.product;
+        const id = this.props.id;
+
         return (
             <span className="grupo-share">
                 <div className="Demo__some-network">
                     <WhatsappShareButton
-                        url={"https://www.google.com.ar/"}
-                        title={"Compartir Whatsapp: "}
+                        url={this.getId(id)}
+                        title={"Mira nuestro producto: "}
                         separator=":: "
                         className="Demo__some-network__share-button"
                     >
@@ -71,8 +76,8 @@ export default class GroupShare extends Component {
 
                 <div className="Demo__some-network">
                     <FacebookShareButton
-                        url={"https://www.google.com.ar/"}
-                        title={"Compartir Facebook: "}
+                        url={this.getId(id)}
+                        title={"Mira nuestro producto: "}
                         separator=":: "
                         className="Demo__some-network__share-button"
                     >
@@ -84,8 +89,8 @@ export default class GroupShare extends Component {
 
                 <div className="Demo__some-network">
                     <TwitterShareButton
-                        url={"https://www.google.com.ar/"}
-                        title={"Compartir Twitter: "}
+                        url={this.getId(id)}
+                        title={"Mira nuestro producto: "}
                         separator=":: "
                         className="Demo__some-network__share-button"
                     >
