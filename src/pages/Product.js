@@ -18,7 +18,7 @@ class Product extends Component {
         return (
             <Layout>
                 <Content className="content">
-                    <p> Información del producto id: {id} </p>
+                    {/* <p> Información del producto id: {id} </p> */}
                     <ProductInfo
                         product={product}
                         onAddToCartClicked={() => addToCart(product.id)}
