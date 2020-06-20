@@ -12,7 +12,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import { firebaseApp } from './Firebase';
+// import { firebaseApp } from './Firebase';
 import Error404 from './pages/Error404';
 import 'react-credit-cards/es/styles-compiled.css';
 import { connect } from 'react-redux';
@@ -42,30 +42,30 @@ class App extends Component {
     this.updateTerm = this.updateTerm.bind(this);
     this.updateList = this.updateList.bind(this);
     // this.updateCart = this.updateCart.bind(this);
-    this.productsRef = firebaseApp.database().ref().child('products');
-  }
+    //   this.productsRef = firebaseApp.database().ref().child('products');
+    // }
 
-  componentDidMount() {
-    this.listenForProducts(this.productsRef);
-  }
+    // componentDidMount() {
+    //   this.listenForProducts(this.productsRef);
+    // }
 
-  listenForProducts(productsRef) {
-    productsRef.on('value', snap => {
-      let products = [];
-      snap.forEach(child => {
-        products.push({
-          name: child.val().name,
-          brand: child.val().brand,
-          price: child.val().price,
-          description: child.val().description,
-          shippingTime: child.val().shippingTime,
-          video: child.val().video,
-          id: child.val().id
-        });
-      });
+    // listenForProducts(productsRef) {
+    //   productsRef.on('value', snap => {
+    //     let products = [];
+    //     snap.forEach(child => {
+    //       products.push({
+    //         name: child.val().name,
+    //         brand: child.val().brand,
+    //         price: child.val().price,
+    //         description: child.val().description,
+    //         shippingTime: child.val().shippingTime,
+    //         video: child.val().video,
+    //         id: child.val().id
+    //       });
+    //     });
 
-      this.setState({ products });
-    });
+    //     this.setState({ products });
+    // });
   }
 
   updateTerm(term) {
@@ -73,13 +73,16 @@ class App extends Component {
   }
 
   updateList(newList, term) {
-    const { products } = this.state;
+    // const { products } = this.state;
     term !== '' ?
       this.setState({
         results: newList,
         term
-      }) :
-      this.setState({ results: products })
+        // }) :
+        // this.setState({ results: products })
+      })
+      :
+      this.setState({ results: [] })
   }
 
   // updateCart(creditCard = '', shippingAddress = '') {
@@ -158,7 +161,7 @@ class App extends Component {
         </Switch>
 
         <CustomFooter />
-      </Router>
+      </Router >
     );
   }
 }

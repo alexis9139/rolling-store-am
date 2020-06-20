@@ -14,7 +14,8 @@ export default class ProductCard extends Component {
         return (
 
             <div style={{ cursor: 'pointer', margin: 20 }}>
-                <div className="product-card">
+
+                <div className="product-card" >
                     <div className="product-imageContainer">
                         {/* <img src={this.getPhoto(id)} className="product-image" alt="product" /> */}
                         <ModalImage
@@ -29,19 +30,18 @@ export default class ProductCard extends Component {
                             showRotate={true}
                             alt=""
                         />
+                        <Link to={{
+                            pathname: '/product/' + id,
+                            state: {
+                                product: this.props.product
+                            }
+                        }}
+                        >
+                            <div>producto: {name} </div>
+                            <div>marca: {brand} </div>
+                            <div>precio: {price} </div>
+                        </Link>
                     </div>
-                    <Link to={{
-                        pathname: '/product/' + id,
-                        state: {
-                            product: this.props.product
-                        }
-                    }}
-                    >
-                        <div>producto: {name} </div>
-                        <div>marca: {brand} </div>
-                        <div>precio: {price} </div>
-                        {/* <FullscreenOutlined style={{ fontSize: '50px', color: 'green' }} /> */}
-                    </Link>
                 </div>
             </div>
 
@@ -51,11 +51,49 @@ export default class ProductCard extends Component {
 
 
 
+        //         {/* <div style={{ cursor: 'pointer', margin: 20 }}>
+        //             <div className="product-card">
+        //                 <div className="product-imageContainer">
+        //                     {/* <img src={this.getPhoto(id)} className="product-image" alt="product" /> */}
+        // <ModalImage
+        //     className="product-image"
+        //     // className="imagen-alto"
+        //     // small={this.props.product.img}
+        //     // large={this.props.product.img}
+        //     small={this.getPhoto(id)}
+        //     large={this.getPhoto(id)}
+        //     hideDownload={true}
+        //     hideZoom={true}
+        //     showRotate={true}
+        //     alt=""
+        // />
+        //     </div >
+        //     <Link to={{
+        //         pathname: '/product/' + id,
+        //         state: {
+        //             product: this.props.product
+        //         }
+        //     }}
+        //     >
+        //         <div>producto: {name} </div>
+        //         <div>marca: {brand} </div>
+        //         <div>precio: {price} </div>
+        //         {/* <FullscreenOutlined style={{ fontSize: '50px', color: 'green' }} /> */}
+        //     </Link>
+        //             </div >
+        //         </div > * /}
+
+        // )
 
 
 
-// import React, { Component } from 'react';
-// import { Link } from 'react-router-dom'
+
+
+
+
+
+// import React, {Component} from 'react';
+// import {Link} from 'react-router-dom'
 
 // export default class ProductCard extends Component {
 //     getPhoto(prodId) {

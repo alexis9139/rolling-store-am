@@ -13,7 +13,7 @@ export default class Main extends Component {
         return (
             <Layout>
                 <Content className="content">
-                    <p> Basado en tu última visita </p>
+                    {/* <p> Basado en tu última visita </p>
                     <div className="products-container">
                         <Row>
                             {
@@ -24,7 +24,26 @@ export default class Main extends Component {
                                 ))
                             }
                         </Row>
-                    </div>
+                    </div> */}
+                    {
+                        products.length === 0 ?
+                            <div>Cargando...</div>
+                            :
+                            <>
+                                <p> Basado en tu última visita </p>
+                                <div className="products-container">
+                                    <Row>
+                                        {
+                                            products.map(prod => (
+                                                <Col xs={{ span: 24 }} lg={{ span: 8 }} key={prod.id}>
+                                                    <ProductCard product={prod} />
+                                                </Col>
+                                            ))
+                                        }
+                                    </Row>
+                                </div>
+                            </>
+                    }
                 </Content>
             </Layout>
 

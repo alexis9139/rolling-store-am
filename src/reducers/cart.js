@@ -2,15 +2,25 @@ import {
     ADD_TO_CART,
     CHECKOUT_REQUEST,
     CHECKOUT_FAILURE,
-    UPDATE_CART
+    // UPDATE_CART
+    CHECKOUT_CART
 } from '../constants/ActionTypes'
+
+import { firebaseApp } from '../Firebase'
+
+const Purchases = firebaseApp.database().ref().child('purchases')
+
+const createPurchase = state => {
+    Purchases.push(state)
+}
+
 
 const initialState = {
     addedIds: [],
     quantityById: {},
     creditCard: '',
     shippingAddress: '',
-    customer: 'Alex'
+    customer: 'Alexis'
 }
 
 const addedIds = (state = initialState.addedIds, action) => {
@@ -65,14 +75,18 @@ const cart = (state = initialState, action) => {
             return initialState
         case CHECKOUT_FAILURE:
             return action.cart
-        case UPDATE_CART:
-            return {
+        // case UPDATE_CART:
+        case CHECKOUT_CART:
+            const newState = {
                 addedIds: state.addedIds,
                 quantityById: state.quantityById,
                 customer: state.customer,
                 creditCard: action.payload.newCreditCard,
                 shippingAddress: action.payload.newShippingAddress
             }
+            createPurchase(newState)
+            // return newState
+            return initialState
         default:
             return {
                 addedIds: addedIds(state.addedIds, action),

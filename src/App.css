@@ -1,7 +1,7 @@
 :root {
-  --background: #AB987A;
+  --background: #FFFFFF;
   --secondary: #0F1626;
-  --details: #FF533D;
+  --details: #000000;
   --text: #F5F5F5;
   --test1: red;
   --test2: blue;
@@ -110,6 +110,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* padding-bottom: 20px; */
 }
 
 .footer {
@@ -202,5 +203,34 @@
 .grupo-share{
   display: inline-flex;
   flex-direction: row;
+}
+
+
+.productInCart {
+  background-color: var(--secondary);
+  padding: 15px;
+}
+
+.productInCart-imageContainer {
+  position: relative;
+  background-color: white;
+  filter: brightness(90%);
+  height: 200px;
+}
+
+.productInCart-image {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 100%;
+  max-height: 200px;
+}
+
+
+
+.keepShopping-link {
+  display: flex;
+  justify-content: center;
+  color: var(--secondary);
 }
 
