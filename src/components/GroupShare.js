@@ -1,55 +1,21 @@
 import React, { Component } from 'react'
 import {
-    EmailShareButton,
     FacebookShareButton,
-    InstapaperShareButton,
-    LineShareButton,
-    LinkedinShareButton,
-    LivejournalShareButton,
-    MailruShareButton,
-    OKShareButton,
-    PinterestShareButton,
-    PocketShareButton,
-    RedditShareButton,
-    TelegramShareButton,
-    TumblrShareButton,
+
     TwitterShareButton,
-    ViberShareButton,
-    VKShareButton,
+
     WhatsappShareButton,
-    WorkplaceShareButton,
 } from "react-share";
 
 
-import {
-    FacebookShareCount,
-    OKShareCount,
-    PinterestShareCount,
-    RedditShareCount,
-    TumblrShareCount,
-    VKShareCount,
-} from "react-share";
+
 
 import {
-    EmailIcon,
     FacebookIcon,
-    InstapaperIcon,
-    LineIcon,
-    LinkedinIcon,
-    LivejournalIcon,
-    MailruIcon,
-    OKIcon,
-    PinterestIcon,
-    PocketIcon,
-    RedditIcon,
-    TelegramIcon,
-    TumblrIcon,
+
     TwitterIcon,
-    ViberIcon,
-    VKIcon,
-    WeiboIcon,
+
     WhatsappIcon,
-    WorkplaceIcon,
 } from "react-share";
 export default class GroupShare extends Component {
     getId(prodId) {

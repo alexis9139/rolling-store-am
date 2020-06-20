@@ -32,7 +32,7 @@ class CartDetails extends Component {
         // const { product, updateCart } = this.props
         // const { total, updateCart } = this.props
         const { total, checkoutCart } = this.props
-        const radioStyle = { display: 'block' }
+        // const radioStyle = { display: 'block' }
         return (
             <Fragment>
                 {/* <h3 style={{ textAlign: 'center' }}>Resumen de compra</h3> */}

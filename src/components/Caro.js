@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Video from './Video';
+// import Video from './Video';
 export default class Caro extends Component {
     render() {
         const responsive = {

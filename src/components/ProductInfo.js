@@ -1,21 +1,21 @@
 import React, { Component, Fragment } from 'react';
 import { Row, Col, Button } from 'antd';
 import { Link } from 'react-router-dom';
-import WhatsApp from '../components/ShareWhatsApp';
+// import WhatsApp from '../components/ShareWhatsApp';
 import GroupShare from '../components/GroupShare';
 import Video from '../components/Video';
-import { HeartTwoTone, SmileOutlined, ShareAltOutlined } from '@ant-design/icons';
+import { HeartTwoTone } from '@ant-design/icons';
 import Puntaje from '../components/Puntaje';
 import {
-    Magnifier,
-    GlassMagnifier,
+    // Magnifier,
+    // GlassMagnifier,
     SideBySideMagnifier,
-    PictureInPictureMagnifier,
-    MOUSE_ACTIVATION,
-    TOUCH_ACTIVATION,
-    MagnifierContainer,
-    MagnifierPreview,
-    MagnifierZoom
+    // PictureInPictureMagnifier,
+    // MOUSE_ACTIVATION,
+    // TOUCH_ACTIVATION,
+    // MagnifierContainer,
+    // MagnifierPreview,
+    // MagnifierZoom
 } from "react-image-magnifiers";
 import PropTypes from 'prop-types';
 
