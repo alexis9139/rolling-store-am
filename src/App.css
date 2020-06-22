@@ -304,3 +304,15 @@
 .color-boton-agregar-carrito{
   background-color:red;
 }
+
+
+
+.content-login {
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),url('./assets/img/fondo.jpg'); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  color: var(--text1) !important;
+}

@@ -17,7 +17,7 @@ import Error404 from './pages/Error404';
 import 'react-credit-cards/es/styles-compiled.css';
 import { connect } from 'react-redux';
 import { getVisibleProducts } from './reducers/products'
-
+import Login from './pages/Login';
 
 const NoMatchPage = () => {
   return (
@@ -33,6 +33,7 @@ class App extends Component {
       // products: [],
       results: [],
       term: '',
+      visible: false
       // cart: {
       //   productToBuy: {},
       //   creditCard: '',
@@ -94,27 +95,47 @@ class App extends Component {
   //   })
   // }
 
+  setVisible = () => {
+    this.setState({
+      visible: true
+    })
+  }
+
 
 
 
   render() {
-    const { term, results } = this.state;
+    const { term, results, visible } = this.state;
     const { products } = this.props
     const updateTerm = this.updateTerm.bind(this);
     const updateList = this.updateList.bind(this);
     // const updateCart = this.updateCart.bind(this);
+    const setVisible = this.setVisible.bind(this);
+
 
     return (
       <Router>
-        <CustomHeader
-          // username={username}
-          term={term}
-          updateTerm={updateTerm}
-          updateList={updateList}
-          products={products}
-        />
+        {
+          visible ?
+            <CustomHeader
+              // username={username}
+              term={term}
+              updateTerm={updateTerm}
+              updateList={updateList}
+              products={products}
+            />
+            : null
+        }
+
 
         <Switch>
+
+          <Route path="/" exact>
+            <div className="App-container">
+              <Login visible={visible} setVisible={setVisible} />
+            </div>
+          </Route>
+
           <Route exact path="/results">
             <div className='App-container'>
               <Results
@@ -148,7 +169,7 @@ class App extends Component {
             </div>
           </Route>
 
-          <Route exact path="/">
+          <Route exact path="/home">
             <div className='App-container'>
               <Main
                 products={products}
@@ -161,7 +182,7 @@ class App extends Component {
         </Switch>
 
         <CustomFooter />
-      </Router >
+      </Router>
     );
   }
 }
