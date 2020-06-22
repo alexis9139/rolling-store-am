@@ -37,9 +37,11 @@ export default class ProductCard extends Component {
                             }
                         }}
                         >
-                            <div>producto: {name} </div>
-                            <div>marca: {brand} </div>
-                            <div>precio: {price} </div>
+                            <div className="color-texto-presentacion">
+                                <div>Producto: {name} </div>
+                                <div>Marca: {brand} </div>
+                                <div>Precio: ${price} </div>
+                            </div>
                         </Link>
                     </div>
                 </div>

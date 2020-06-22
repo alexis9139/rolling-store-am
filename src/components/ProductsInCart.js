@@ -24,15 +24,16 @@ class ProductsInCart extends Component {
                                     </Col>
                                     <Col xl={{ span: 14 }} xs={{ span: 24 }}>
                                         <div style={{ marginLeft: 10 }}>
-                                            <div>{name} {brand}</div>
+                                            {/* <div>{name} {brand}</div> */}
                                         </div>
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <div style={{ textAlign: 'center' }}>subtotal: {quantity} x ${price} = ${quantity * price} </div>
+                                    <div>{name} {brand}</div>
                                 </Row>
-                                <div>{name} {brand}</div>
+                                {/* <div style={{ textAlign: 'center' }}>subtotal: {quantity} x ${price} = ${quantity * price} </div> */}
                                 <div>subtotal: {quantity} x ${price} = ${quantity * price} </div>
+                                {/* <div>subtotal: {quantity} x ${price} = ${quantity * price} </div> */}
                             </div>
                         </div>
                     ))

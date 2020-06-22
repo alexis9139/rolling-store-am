@@ -75,7 +75,7 @@ class ProductInfo extends Component {
                                         state: { product }
                                     }}
                                 >
-                                    <Button onClick={onAddToCartClicked}>Agregar a carrito</Button>
+                                    <Button onClick={onAddToCartClicked} className="color-boton-agregar-carrito">Agregar a carrito</Button>
                                 </Link>
                             </div>
                         </Col>

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Layout, Row, Col } from 'antd';
 import ProductCard from '../components/ProductCard';
+import Caro from '../components/Caro'
 const { Content } = Layout;
-
 export default class Main extends Component {
 
     render() {
 
 
         const { products } = this.props;
-
         return (
             <Layout>
                 <Content className="content">
@@ -30,7 +29,8 @@ export default class Main extends Component {
                             <div>Cargando...</div>
                             :
                             <>
-                                <p> Basado en tu última visita </p>
+                                {/* <Caro /> */}
+                                <p> Basado en tu última visita</p>
                                 <div className="products-container">
                                     <Row>
                                         {

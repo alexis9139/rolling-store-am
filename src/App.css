@@ -22,7 +22,7 @@
   flex-direction: column;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: var(--text);
+  color: var(--black);
 }
 
 .logo {
@@ -119,8 +119,10 @@
 }
 
 .product-card {
-  background-color: var(--secondary);
-  padding: 15px;
+  background-color: white;
+  /* padding: 1px; */
+  /* height: 350px; */
+  border: 1px solid black;
 }
 
 .products-container {
@@ -143,31 +145,39 @@
 
 /*-------------------------------------------------------------------*/
 .productInfo {
-  background-color: var(--secondary);
+  /* background-color: var(--secondary); */
+  background-color: #d9d9d9;
   padding: 15px;
   min-width: 600px;
   padding: 20px;
   margin: 0 40px;
+  margin-top: 5px;
+  /* border: 1px solid red; */
 }
 
 .productInfo-imageContainer {
   position: relative;
-  background-color: white;
-  filter: brightness(90%);
-  padding: 5px;
+  background-color: var(--text);
+  /* filter: brightness(90%); */
+  padding: 10px;
   min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: black;
   text-align: center;
+  /* border: 1px solid red; */
+
 }
 
 .productInfo-description {
   padding: 20px;
   text-align: center;
   font-size: 15px;
-  
+  /* border: 1px solid red; */
+  /* margin: 1px; */
+  background-color: var(--text);
+
 }
 
 /*-------------------------------------------------------------------*/
@@ -234,3 +244,63 @@
   color: var(--secondary);
 }
 
+.imagen-carousel{
+  width: 100%;
+  border: 1px solid black;
+  height: 430px;
+}
+
+
+
+
+/* .container {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 20px;
+} */
+.div-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.div-img.hidden {
+  overflow: hidden;
+}
+.div-img .img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -moz-transform: scale(1);
+  -webkit-transform: scale(1);
+  -o-transform: scale(1);
+  /* -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out; */
+}
+.div-img:hover .img {
+  transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+
+.color-texto-presentacion{
+  color: black;
+  text-align: center;
+}
+
+
+
+.color-boton-agregar-carrito{
+  background-color:red;
+}
