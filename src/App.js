@@ -17,7 +17,8 @@ import Error404 from './pages/Error404';
 import 'react-credit-cards/es/styles-compiled.css';
 import { connect } from 'react-redux';
 import { getVisibleProducts } from './reducers/products'
-import Login from './pages/Login';
+import FacebookLogin from "react-facebook-login";
+import Login from './pages/Login'
 
 const NoMatchPage = () => {
   return (
@@ -33,40 +34,13 @@ class App extends Component {
       // products: [],
       results: [],
       term: '',
-      visible: false
-      // cart: {
-      //   productToBuy: {},
-      //   creditCard: '',
-      //   shippingAddress: ''
-      // }
+      isLoggedIn: false,
+      userFacebooks: {}
+
     }
     this.updateTerm = this.updateTerm.bind(this);
     this.updateList = this.updateList.bind(this);
-    // this.updateCart = this.updateCart.bind(this);
-    //   this.productsRef = firebaseApp.database().ref().child('products');
-    // }
-
-    // componentDidMount() {
-    //   this.listenForProducts(this.productsRef);
-    // }
-
-    // listenForProducts(productsRef) {
-    //   productsRef.on('value', snap => {
-    //     let products = [];
-    //     snap.forEach(child => {
-    //       products.push({
-    //         name: child.val().name,
-    //         brand: child.val().brand,
-    //         price: child.val().price,
-    //         description: child.val().description,
-    //         shippingTime: child.val().shippingTime,
-    //         video: child.val().video,
-    //         id: child.val().id
-    //       });
-    //     });
-
-    //     this.setState({ products });
-    // });
+    this.setUserFacebook = this.setUserFacebook.bind(this);
   }
 
   updateTerm(term) {
@@ -79,111 +53,118 @@ class App extends Component {
       this.setState({
         results: newList,
         term
-        // }) :
-        // this.setState({ results: products })
       })
       :
       this.setState({ results: [] })
   }
 
-  // updateCart(creditCard = '', shippingAddress = '') {
-  //   this.setState({
-  //     cart: {
-  //       creditCard,
-  //       shippingAddress
-  //     }
-  //   })
-  // }
 
-  setVisible = () => {
+
+
+
+  setIsLogin = () => {
     this.setState({
-      visible: true
+      isLoggedIn: true
     })
   }
 
-
+  setUserFacebook = (newUserFacebook) => {
+    newUserFacebook !== null ?
+      this.setState({
+        userFacebooks: newUserFacebook
+      })
+      :
+      this.setState({
+        userFacebooks: {}
+      })
+  }
 
 
   render() {
-    const { term, results, visible } = this.state;
+    const { term, results, userFacebooks } = this.state;
     const { products } = this.props
     const updateTerm = this.updateTerm.bind(this);
     const updateList = this.updateList.bind(this);
-    // const updateCart = this.updateCart.bind(this);
-    const setVisible = this.setVisible.bind(this);
+    const setIsLogin = this.setIsLogin.bind(this);
+    const setUserFacebook = this.setUserFacebook.bind(this);
 
 
-    return (
-      <Router>
-        {
-          visible ?
-            <CustomHeader
-              // username={username}
-              term={term}
-              updateTerm={updateTerm}
-              updateList={updateList}
-              products={products}
-            />
-            : null
-        }
 
+    if (this.state.isLoggedIn) {
+      return (
+        <Router>
+          <CustomHeader
+            // username={username}
+            term={term}
+            updateTerm={updateTerm}
+            updateList={updateList}
+            products={products}
+            userFacebooks={userFacebooks}
+          />
 
-        <Switch>
-
-          <Route path="/" exact>
-            <div className="App-container">
-              <Login visible={visible} setVisible={setVisible} />
-            </div>
-          </Route>
-
-          <Route exact path="/results">
-            <div className='App-container'>
-              <Results
-                results={results}
-              />
-            </div>
-          </Route>
-
-          <Route exact
-            path="/product/:id"
-            render={props =>
+          <Switch>
+            <Route exact path="/results">
               <div className='App-container'>
-                <Product {...props} />
+                <Results
+                  results={results}
+                />
               </div>
-            }>
-          </Route>
+            </Route>
 
-          <Route exact
-            path="/cart"
-            render={props =>
+            <Route exact
+              path="/product/:id"
+              render={props =>
+                <div className='App-container'>
+                  <Product {...props} />
+                </div>
+              }>
+            </Route>
+
+            <Route exact
+              path="/cart"
+              render={props =>
+                <div className='App-container'>
+                  <Cart {...props} />
+                </div>
+              }>
+            </Route>
+
+            <Route exact path="/success">
               <div className='App-container'>
-                <Cart {...props} />
+                <Success
+                />
               </div>
-            }>
-          </Route>
+            </Route>
 
-          <Route exact path="/success">
-            <div className='App-container'>
-              <Success
-              />
-            </div>
-          </Route>
+            <Route exact path="/">
+              <div className='App-container'>
+                <Main
+                  products={products}
+                />
+              </div>
+            </Route>
 
-          <Route exact path="/home">
-            <div className='App-container'>
-              <Main
-                products={products}
-              />
-            </div>
-          </Route>
+            {/* PAGINA ERROR */}
+            <Route component={NoMatchPage} />
+          </Switch>
 
-          {/* PAGINA ERROR */}
-          <Route component={NoMatchPage} />
-        </Switch>
-
-        <CustomFooter />
-      </Router>
-    );
+          <CustomFooter />
+        </Router>
+      )
+    } else {
+      return (
+        <Router>
+          <Switch>
+            <Route path="/" exact>
+              <div className="App-container">
+                <Login isLoggedIn={this.state.isLoggedIn} setIsLogin={setIsLogin} setUserFacebook={setUserFacebook} />
+                {/* <Login visible={visible} setVisible={setVisible} isLoggedIn={isLoggedIn} setIsLogin={setIsLogin} /> */}
+              </div>
+            </Route>
+          </Switch>
+        </Router>
+      );
+    }
   }
 }
 const mapStateToProps = state => ({

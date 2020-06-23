@@ -1,10 +1,39 @@
 import React, { Component } from 'react'
 import { Form, Input, Button, Checkbox, Card, Layout } from 'antd';
 import { Link } from 'react-router-dom'
+import FacebookLogin from "react-facebook-login";
 
 const { Content, Header, Footer } = Layout;
 
 export class Login extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            google: {},
+            facebook: {}
+        }
+    }
+    responseFacebook = response => {
+        console.log(response);
+        // const { facebook } = this.state;
+        this.setState({
+            facebook: {
+                isLoggedIn: true,
+                // userID: response.userID,
+                name: response.name,
+                // email: response.email,
+                picture: response.picture.data.url
+            }
+        })
+        console.log(response);
+        console.log("ESTO ES TU OBJETO FACEBOOK: " + this.state.facebook.name);
+        this.props.setUserFacebook(this.state.facebook)
+        this.props.setIsLogin();
+    };
+
+
+    componentClicked = () => console.log("clicked");
 
     render() {
         return (
@@ -41,10 +70,14 @@ export class Login extends Component {
                                 <Input.Password />
                             </Form.Item>
 
-                            {/* <Form.Item name="remember" valuePropName="checked">
-                                <Checkbox>Remember me</Checkbox>
-                            </Form.Item> */}
 
+                            <FacebookLogin
+                                appId="309693926864688"
+                                autoLoad={true}
+                                fields="name,email,picture"
+                                onClick={this.componentClicked}
+                                callback={this.responseFacebook}
+                            />
                             <Form.Item>
                                 <Link to={{ pathname: '/home' }}>
                                     <Button type="danger" htmlType="submit" onClick={this.props.setVisible}>

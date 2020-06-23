@@ -316,3 +316,11 @@
   font-size: 26px;
   color: var(--text1) !important;
 }
+
+
+
+
+.estilo-foto-perfil{
+  margin-top: 15px !important;
+  margin-left: 15px !important;
+}
