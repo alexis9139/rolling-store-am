@@ -79,7 +79,7 @@ export class Login extends Component {
                                 callback={this.responseFacebook}
                             />
                             <Form.Item>
-                                <Link to={{ pathname: '/home' }}>
+                                <Link to={{ pathname: '/' }}>
                                     <Button type="danger" htmlType="submit" onClick={this.props.setVisible}>
                                         Iniciar
                                     </Button>
