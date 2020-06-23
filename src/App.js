@@ -17,7 +17,7 @@ import Error404 from './pages/Error404';
 import 'react-credit-cards/es/styles-compiled.css';
 import { connect } from 'react-redux';
 import { getVisibleProducts } from './reducers/products'
-import FacebookLogin from "react-facebook-login";
+// import FacebookLogin from "react-facebook-login";
 import Login from './pages/Login'
 
 const NoMatchPage = () => {

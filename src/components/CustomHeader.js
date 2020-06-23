@@ -5,7 +5,7 @@ import { Layout, Row, Col, Input } from 'antd';
 import { Redirect, Link } from 'react-router-dom'
 import { getInfoCustomer } from '../reducers';
 import { connect } from 'react-redux';
-import { List, Avatar } from 'antd';
+import { Avatar } from 'antd';
 
 const { Header } = Layout;
 const { Search } = Input;
@@ -80,7 +80,7 @@ class CustomHeader extends Component {
     }
 
     render() {
-        const { customer, userFacebooks } = this.props;
+        const { userFacebooks } = this.props;
 
         return (
             <Header className='header'>

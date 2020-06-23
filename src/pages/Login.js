@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Input, Button, Checkbox, Card, Layout } from 'antd';
+import { Form, Input, Button, Card, Layout } from 'antd';
 import { Link } from 'react-router-dom'
 import FacebookLogin from "react-facebook-login";
 
