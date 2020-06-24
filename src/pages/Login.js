@@ -35,7 +35,10 @@ export class Login extends Component {
 
     componentClicked = () => console.log("clicked");
 
+
     render() {
+        // var React = require('react');
+        var QRCode = require('qrcode.react');
         return (
             <Layout>
                 <Header className='header'></Header>
@@ -84,8 +87,10 @@ export class Login extends Component {
                                         Iniciar
                                     </Button>
                                 </Link>
+
                             </Form.Item>
                         </Form>
+                        <QRCode value="https://rolling-store-am.netlify.app/" />
                     </Card>
                 </Content>
                 <Footer className="footer"></Footer>
