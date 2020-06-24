@@ -322,5 +322,16 @@
 
 .estilo-foto-perfil{
   margin-top: 15px !important;
-  margin-left: 15px !important;
+  margin-left: 10px !important;
+}
+
+
+.estilo-salir{
+  margin-top: 25px !important;
+  margin-left: 20px !important;
+}
+
+
+.estilo-barra{
+  margin: 0px;
 }

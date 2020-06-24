@@ -17,8 +17,14 @@ import Error404 from './pages/Error404';
 import 'react-credit-cards/es/styles-compiled.css';
 import { connect } from 'react-redux';
 import { getVisibleProducts } from './reducers/products'
-// import FacebookLogin from "react-facebook-login";
-import Login from './pages/Login'
+// import Login from './pages/Login'
+
+// import firebase from "firebase/app"
+// import { firebaseApp } from "./Firebase";
+import { firebaseApp } from './Firebase';
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
+
+
 
 const NoMatchPage = () => {
   return (
@@ -34,14 +40,43 @@ class App extends Component {
       // products: [],
       results: [],
       term: '',
-      isLoggedIn: false,
-      userFacebooks: {}
+      // isLoggedIn: false,
+      // userFacebooks: {}
+      isSignedIn: false
 
     }
     this.updateTerm = this.updateTerm.bind(this);
     this.updateList = this.updateList.bind(this);
-    this.setUserFacebook = this.setUserFacebook.bind(this);
+    // this.setUserFacebook = this.setUserFacebook.bind(this);
   }
+
+  uiConfig = {
+    signInFlow: "popup",
+    signInOptions: [
+      firebaseApp.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebaseApp.auth.FacebookAuthProvider.PROVIDER_ID,
+      firebaseApp.auth.TwitterAuthProvider.PROVIDER_ID,
+      firebaseApp.auth.GithubAuthProvider.PROVIDER_ID,
+      firebaseApp.auth.EmailAuthProvider.PROVIDER_ID
+    ],
+    callbacks: {
+      signInSuccess: () => false
+    }
+  }
+
+
+
+  componentDidMount = () => {
+    firebaseApp.auth().onAuthStateChanged(user => {
+      this.setState({ isSignedIn: !!user })
+      console.log("user", user)
+    })
+  }
+
+
+
+
+
 
   updateTerm(term) {
     this.setState({ term })
@@ -62,111 +97,103 @@ class App extends Component {
 
 
 
-  setIsLogin = () => {
-    this.setState({
-      isLoggedIn: true
-    })
-  }
 
-  setUserFacebook = (newUserFacebook) => {
-    newUserFacebook !== null ?
-      this.setState({
-        userFacebooks: newUserFacebook
-      })
-      :
-      this.setState({
-        userFacebooks: {}
-      })
-  }
 
 
   render() {
-    const { term, results, userFacebooks } = this.state;
+    const { term, results } = this.state;
     const { products } = this.props
     const updateTerm = this.updateTerm.bind(this);
     const updateList = this.updateList.bind(this);
-    const setIsLogin = this.setIsLogin.bind(this);
-    const setUserFacebook = this.setUserFacebook.bind(this);
 
 
 
-    if (this.state.isLoggedIn) {
-      return (
-        <Router>
-          <CustomHeader
-            // username={username}
-            term={term}
-            updateTerm={updateTerm}
-            updateList={updateList}
-            products={products}
-            userFacebooks={userFacebooks}
-          />
+    return (
+      <>
+        {this.state.isSignedIn ? (
+          <Router>
+            <CustomHeader
+              term={term}
+              updateTerm={updateTerm}
+              updateList={updateList}
+              products={products}
+            />
 
-          <Switch>
-            <Route exact path="/results">
-              <div className='App-container'>
-                <Results
-                  results={results}
-                />
-              </div>
-            </Route>
-
-            <Route exact
-              path="/product/:id"
-              render={props =>
+            <Switch>
+              <Route exact path="/results">
                 <div className='App-container'>
-                  <Product {...props} />
+                  <Results
+                    results={results}
+                  />
                 </div>
-              }>
-            </Route>
+              </Route>
 
-            <Route exact
-              path="/cart"
-              render={props =>
+              <Route exact
+                path="/product/:id"
+                render={props =>
+                  <div className='App-container'>
+                    <Product {...props} />
+                  </div>
+                }>
+              </Route>
+
+              <Route exact
+                path="/cart"
+                render={props =>
+                  <div className='App-container'>
+                    <Cart {...props} />
+                  </div>
+                }>
+              </Route>
+
+              <Route exact path="/success">
                 <div className='App-container'>
-                  <Cart {...props} />
+                  <Success
+                  />
                 </div>
-              }>
-            </Route>
+              </Route>
 
-            <Route exact path="/success">
-              <div className='App-container'>
-                <Success
-                />
-              </div>
-            </Route>
+              <Route exact path="/">
+                <div className='App-container'>
+                  <Main
+                    products={products}
+                  />
+                </div>
+              </Route>
 
-            <Route exact path="/">
-              <div className='App-container'>
-                <Main
-                  products={products}
-                />
-              </div>
-            </Route>
+              {/* PAGINA ERROR */}
+              <Route component={NoMatchPage} />
+            </Switch>
 
-            {/* PAGINA ERROR */}
-            <Route component={NoMatchPage} />
-          </Switch>
-
-          <CustomFooter />
-        </Router>
-      )
-    } else {
-      return (
-        <Router>
-          <Switch>
-            <Route path="/" exact>
-              <div className="App-container">
-                <Login isLoggedIn={this.state.isLoggedIn} setIsLogin={setIsLogin} setUserFacebook={setUserFacebook} />
-                {/* <Login visible={visible} setVisible={setVisible} isLoggedIn={isLoggedIn} setIsLogin={setIsLogin} /> */}
-              </div>
-            </Route>
-          </Switch>
-        </Router>
-      );
-    }
+            <CustomFooter />
+          </Router>
+        ) :
+          (
+            <StyledFirebaseAuth
+              uiConfig={this.uiConfig}
+              firebaseAuth={firebaseApp.auth()}
+            />
+          )
+        }
+      </>
+    )
   }
+  // else {
+  //   return (
+  //     <Router>
+  //       <Switch>
+  //         <Route path="/" exact>
+  //           <div className="App-container">
+  //             <Login isLoggedIn={this.state.isLoggedIn} setIsLogin={setIsLogin} setUserFacebook={setUserFacebook} />
+  //             {/* <Login visible={visible} setVisible={setVisible} isLoggedIn={isLoggedIn} setIsLogin={setIsLogin} /> */}
+  //           </div>
+  //         </Route>
+  //       </Switch>
+  //     </Router>
+  //   );
+  // }
 }
+
 const mapStateToProps = state => ({
   products: getVisibleProducts(state.products)
 })

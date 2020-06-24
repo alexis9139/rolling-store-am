@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Row, Col } from 'antd';
 import ProductCard from '../components/ProductCard';
+// import { firebaseApp } from '../Firebase';
 // import Caro from '../components/Caro'
 const { Content } = Layout;
 export default class Main extends Component {
@@ -30,6 +31,7 @@ export default class Main extends Component {
                             :
                             <>
                                 {/* <Caro /> */}
+
                                 <p> Basado en tu última visita</p>
                                 <div className="products-container">
                                     <Row>

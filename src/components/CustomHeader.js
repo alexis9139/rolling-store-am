@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
-import { Layout, Row, Col, Input } from 'antd';
+import { Layout, Row, Col, Input, Avatar } from 'antd';
 // import { Redirect } from 'react-router-dom';
 import { Redirect, Link } from 'react-router-dom'
 import { getInfoCustomer } from '../reducers';
 import { connect } from 'react-redux';
-import { Avatar } from 'antd';
+import { firebaseApp } from '../Firebase';
+// import { LogoutOutlined } from '@ant-design/icons';
 
 const { Header } = Layout;
 const { Search } = Input;
@@ -80,7 +81,7 @@ class CustomHeader extends Component {
     }
 
     render() {
-        const { userFacebooks } = this.props;
+        // const { customer } = this.props;
 
         return (
             <Header className='header'>
@@ -96,6 +97,7 @@ class CustomHeader extends Component {
                         <div className='header-search'>
                             {this.renderRedirectToResults()}
                             <Search
+                                className="estilo-barra"
                                 placeholder='¿Que queres comprar?'
                                 onSearch={() => this.handleSearch(this.props.term)}
                                 onChange={this.handleChange}
@@ -111,7 +113,13 @@ class CustomHeader extends Component {
                         </div>
                     </Col>
                     <Col xs={{ span: 0 }} lg={{ span: 5 }}>
-                        <div className='header-greetings'>Bienvenido {userFacebooks.name} <Avatar className="estilo-foto-perfil" src={userFacebooks.picture}></Avatar></div>
+                        {/* <LogoutOutlined className="estilo-salir" onClick={() => firebaseApp.auth().signOut()} /> */}
+                        <div className='header-greetings'>
+                            Bienvenido {firebaseApp.auth().currentUser.displayName}
+                            <Avatar className="estilo-foto-perfil"
+                                src={firebaseApp.auth().currentUser.photoURL} >
+                            </Avatar>
+                        </div>
                     </Col>
                 </Row>
             </Header>
