@@ -321,14 +321,16 @@
 
 
 .estilo-foto-perfil{
-  margin-top: 15px !important;
+  /* margin-top: 15px !important; */
   margin-left: 10px !important;
 }
 
 
 .estilo-salir{
-  margin-top: 25px !important;
-  margin-left: 20px !important;
+  /* margin-top: 25px !important;
+  margin-left: 20px !important; */
+  justify-content: center;
+  text-align: center;
 }
 
 

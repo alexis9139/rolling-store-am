@@ -6,10 +6,26 @@ import { Redirect, Link } from 'react-router-dom'
 import { getInfoCustomer } from '../reducers';
 import { connect } from 'react-redux';
 import { firebaseApp } from '../Firebase';
-// import { LogoutOutlined } from '@ant-design/icons';
-
+import { LogoutOutlined } from '@ant-design/icons';
+import { Menu, Dropdown } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
 const { Header } = Layout;
 const { Search } = Input;
+
+const menu = (
+    <Menu>
+        <Menu.Item>
+            <a target="_blank" rel="noopener noreferrer" href="#">
+                Configuración
+        </a>
+        </Menu.Item>
+        <Menu.Divider />
+        <Menu.Item className="estilo-salir" onClick={() => firebaseApp.auth().signOut()}>
+            <LogoutOutlined />
+        </Menu.Item>
+    </Menu>
+);
+
 
 class CustomHeader extends Component {
     constructor(props) {
@@ -113,12 +129,20 @@ class CustomHeader extends Component {
                         </div>
                     </Col>
                     <Col xs={{ span: 0 }} lg={{ span: 5 }}>
-                        {/* <LogoutOutlined className="estilo-salir" onClick={() => firebaseApp.auth().signOut()} /> */}
+
                         <div className='header-greetings'>
                             Bienvenido {firebaseApp.auth().currentUser.displayName}
-                            <Avatar className="estilo-foto-perfil"
+                            {/* <Avatar className="estilo-foto-perfil"
                                 src={firebaseApp.auth().currentUser.photoURL} >
                             </Avatar>
+                            <LogoutOutlined className="estilo-salir" onClick={() => firebaseApp.auth().signOut()} /> */}
+                            <Dropdown overlay={menu}>
+                                <a onClick={e => e.preventDefault()}>
+                                    <Avatar className="estilo-foto-perfil"
+                                        src={firebaseApp.auth().currentUser.photoURL} >
+                                    </Avatar>
+                                </a>
+                            </Dropdown>
                         </div>
                     </Col>
                 </Row>
