@@ -5,10 +5,9 @@ import { checkout } from '../actions'
 import { getTotal, getCartProducts, getInfoCustomer, getInfoShippingAddress, getInfoCreditCard } from '../reducers';
 import { Layout, Row, Col } from 'antd';
 import { Link } from 'react-router-dom'
-
-// import ProductCard from '../components/ProductCard';
 import ProductsInCart from '../components/ProductsInCart';
 import CartDetails from '../components/CartDetails';
+
 const { Content } = Layout;
 
 class Cart extends Component {
@@ -19,17 +18,8 @@ class Cart extends Component {
             shippingAddress: ''
         }
     }
-
-    // componentDidMount() {
-    //     const { product } = this.props.location.state
-    //     this.props.updateCart(product)
-    // }
-
     render() {
-        // const { product } = this.props.location.state
-        // const { customer, shippingAddress, creditCard } = this.props
         const { customer, shippingAddress, creditCard, products } = this.props
-
         return (
             <Layout>
                 <Content className="content">
@@ -55,8 +45,6 @@ class Cart extends Component {
         )
     }
 }
-
-
 
 Cart.propTypes = {
     products: PropTypes.arrayOf(PropTypes.shape({
@@ -84,19 +72,3 @@ export default connect(
 
 
 
-// import React, { Component } from 'react';
-// import { Layout, Row, Col } from 'antd';
-// const { Content } = Layout;
-
-// export default class Cart extends Component {
-//     render() {
-
-//         return (
-//             <Layout>
-//                 <Content className="content">
-//                     <p> Mi carrito </p>
-//                 </Content>
-//             </Layout>
-//         )
-//     }
-// }

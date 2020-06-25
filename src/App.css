@@ -175,8 +175,6 @@
   padding: 20px;
   text-align: center;
   font-size: 15px;
-  /* border: 1px solid red; */
-  /* margin: 1px; */
   background-color: var(--text);
 
 }
@@ -192,6 +190,8 @@
 .footer {
   color: var(--text) !important;
   background-color: var(--details) !important;
+  text-align: center;
+  color: yellow !important;
 }
 
 .pagina404{
@@ -254,15 +254,7 @@
 
 
 
-/* .container {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  top: 20px;
-} */
+
 .div-img {
   display: block;
   margin-left: auto;
@@ -281,10 +273,7 @@
   -moz-transform: scale(1);
   -webkit-transform: scale(1);
   -o-transform: scale(1);
-  /* -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out; */
+
 }
 .div-img:hover .img {
   transform: scale(1.2);
@@ -309,7 +298,6 @@
 
 
 .content-login {
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),url('./assets/img/fondo.jpg'); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -322,14 +310,12 @@
 
 
 .estilo-foto-perfil{
-  /* margin-top: 15px !important; */
   margin-left: 10px !important;
 }
 
 
 .estilo-salir{
-  /* margin-top: 25px !important;
-  margin-left: 20px !important; */
+
   justify-content: center;
   text-align: center;
 }
@@ -337,4 +323,45 @@
 
 .estilo-barra{
   margin: 0px;
+}
+
+
+
+
+
+@media (max-width: 575.98px) { 
+  .ant-layout, .ant-layout * {
+    background-color: #d9d9d9;
+  }
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+  .ant-layout, .ant-layout * {
+    background-color: #f0f0f0;
+  }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  .ant-layout, .ant-layout * {
+    background-color:#f5f5f5 ;
+  }
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+  .ant-layout, .ant-layout * {
+    background-color: #fafafa;
+  }
+}
+
+
+
+@media (min-width: 1200px) {  
+  .ant-layout, .ant-layout * {
+    background-color:  #ffffff;
+  }
 }

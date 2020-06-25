@@ -75,7 +75,6 @@ const cart = (state = initialState, action) => {
             return initialState
         case CHECKOUT_FAILURE:
             return action.cart
-        // case UPDATE_CART:
         case CHECKOUT_CART:
             const newState = {
                 addedIds: state.addedIds,
@@ -85,7 +84,6 @@ const cart = (state = initialState, action) => {
                 shippingAddress: action.payload.newShippingAddress
             }
             createPurchase(newState)
-            // return newState
             return initialState
         default:
             return {

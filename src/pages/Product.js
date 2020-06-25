@@ -4,17 +4,16 @@ import { connect } from 'react-redux'
 import { Layout } from 'antd'
 import ProductInfo from '../components/ProductInfo'
 import { addToCart } from '../actions'
-import { getVisibleProducts } from '../reducers/products'
+import { getVisibleProducts } from '../reducers/products';
+
 const { Content } = Layout
 
 
 class Product extends Component {
     render() {
-
         // const { id } = this.props.match.params
         const { product } = this.props.location.state
         const { addToCart } = this.props
-
         return (
             <Layout>
                 <Content className="content">
@@ -28,7 +27,6 @@ class Product extends Component {
         )
     }
 }
-
 
 Product.propTypes = {
     products: PropTypes.arrayOf(PropTypes.shape({

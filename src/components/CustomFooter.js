@@ -4,7 +4,7 @@ const { Footer } = Layout;
 
 const CustomFooter = () => (
     <Footer className="footer">
-        Rolling store 2020
+        © Copyright 2020
     </Footer>
 )
 

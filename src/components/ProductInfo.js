@@ -1,35 +1,21 @@
 import React, { Component, Fragment } from 'react';
 import { Row, Col, Button } from 'antd';
 import { Link } from 'react-router-dom';
-// import WhatsApp from '../components/ShareWhatsApp';
 import GroupShare from '../components/GroupShare';
 import Video from '../components/Video';
-// import { HeartTwoTone } from '@ant-design/icons';
 import Puntaje from '../components/Puntaje';
 import {
-    // Magnifier,
-    // GlassMagnifier,
     SideBySideMagnifier,
-    // PictureInPictureMagnifier,
-    // MOUSE_ACTIVATION,
-    // TOUCH_ACTIVATION,
-    // MagnifierContainer,
-    // MagnifierPreview,
-    // MagnifierZoom
 } from "react-image-magnifiers";
 import PropTypes from 'prop-types';
-
-
 
 class ProductInfo extends Component {
     getPhoto(prodId) {
         return `https://firebasestorage.googleapis.com/v0/b/rolling-store-am.appspot.com/o/products%2F${prodId}.png?alt=media`
     }
-
     render() {
         const { name, brand, price, id, description, shippingTime, video } = this.props.product;
         const { product, onAddToCartClicked } = this.props;
-
         return (
             <Fragment>
                 <div className="productInfo">

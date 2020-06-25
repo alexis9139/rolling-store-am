@@ -6,13 +6,11 @@ export default class Puntaje extends Component {
     state = {
         value: 3,
     };
-
     handleChange = value => {
         this.setState({ value });
     };
     render() {
         const { value } = this.state;
-
         return (
             <span>
                 <Rate tooltips={desc} onChange={this.handleChange} value={value} />

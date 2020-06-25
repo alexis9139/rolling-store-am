@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { firebaseApp } from '../Firebase';
 import { LogoutOutlined } from '@ant-design/icons';
 import { Menu, Dropdown } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+
 const { Header } = Layout;
 const { Search } = Input;
 
@@ -24,7 +24,6 @@ const menu = (
         </Menu.Item>
     </Menu>
 );
-
 
 class CustomHeader extends Component {
     constructor(props) {
@@ -72,14 +71,12 @@ class CustomHeader extends Component {
 
     handleClearTerm() {
         this.props.updateTerm('')
-
     }
 
     handleSearch(term) {
         const localTerm = term;
         let currentProducts = [];
         let newProducts = [];
-
         if (localTerm !== '') {
             currentProducts = this.props.products;
             newProducts = currentProducts.filter(item => {
@@ -91,7 +88,6 @@ class CustomHeader extends Component {
         } else {
             newProducts = this.props.products;
         }
-
         this.setRedirectToResults();
     }
 

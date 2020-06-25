@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import { Radio, Input, Button } from 'antd';
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-// import { updateCart } from '../actions'
 import { checkoutCart } from '../actions'
 import { getTotal } from '../reducers'
 import Credit from './CreditCard';
@@ -10,11 +9,8 @@ import { Link } from 'react-router-dom'
 
 const { Group } = Radio;
 
-
 class CartDetails extends Component {
     state = {
-        // creditCard: '',
-        // shippingAddress: '',
         creditCard: this.props.creditCard,
         shippingAddress: this.props.shippingAddress
     }

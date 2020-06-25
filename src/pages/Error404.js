@@ -16,14 +16,6 @@ export default class Error404 extends Component {
                         // state: { product }
                     }}>Regresar pagina principal</Link></Button>}
                 />
-                {/* <Link
-                    to={{
-                        pathname: '/',
-                        // state: { product }
-                    }}
-                >
-                    <Button type="primary">Regresar pagina principal</Button>
-                </Link> */}
             </div>
         )
     }

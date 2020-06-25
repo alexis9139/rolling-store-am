@@ -9,7 +9,6 @@ export default class Results extends Component {
     }
     render() {
         const { results } = this.props;
-
         return (
             <Layout>
                 <Content className="content">
