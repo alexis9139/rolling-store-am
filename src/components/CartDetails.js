@@ -32,7 +32,7 @@ class CartDetails extends Component {
         return (
             <Fragment>
                 {/* <h3 style={{ textAlign: 'center' }}>Resumen de compra</h3> */}
-                <h3 style={{ textAlign: 'center', color: 'white' }}>Resumen de compra</h3>
+                <h3 style={{ textAlign: 'center', color: 'black' }}>Resumen de compra</h3>
                 <div className="cartDetails">
                     <p>Total: ${total}</p>
                     <p>¿Donde queres recibir tu compra?</p>

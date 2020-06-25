@@ -43,12 +43,13 @@ class App extends Component {
     signInOptions: [
       firebaseApp.auth.GoogleAuthProvider.PROVIDER_ID,
       firebaseApp.auth.FacebookAuthProvider.PROVIDER_ID,
-      firebaseApp.auth.TwitterAuthProvider.PROVIDER_ID,
+      // firebaseApp.auth.TwitterAuthProvider.PROVIDER_ID,
       firebaseApp.auth.GithubAuthProvider.PROVIDER_ID,
-      firebaseApp.auth.EmailAuthProvider.PROVIDER_ID
+      firebaseApp.auth.EmailAuthProvider.PROVIDER_ID,
+      firebaseApp.auth.PhoneAuthProvider.PROVIDER_ID,
     ],
     callbacks: {
-      signInSuccess: () => false
+      signInSuccessWithAuthResult: () => false
     }
   }
 
@@ -56,6 +57,7 @@ class App extends Component {
     firebaseApp.auth().onAuthStateChanged(user => {
       this.setState({ isSignedIn: !!user })
       console.log("user", user)
+      console.log("isSignedIn", this.state.isSignedIn)
     })
   }
 

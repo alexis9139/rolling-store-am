@@ -74,10 +74,7 @@
 
 
 
-.header-logo {
-  height: 60px;
-  cursor: pointer !important;
-}
+
 
 .header-search {
   display: flex;
@@ -184,6 +181,7 @@
   background-color: var(--text);
   padding: 15px;
   margin: 20px;
+  color: black;
 }
 /*-------------------------------------------------------------------*/
 
@@ -331,6 +329,14 @@
 }
 
 
+#PaymentForm{
+  color: green;
+  /* background-color: blue; */
+}
+
+
+
+
 
 
 
@@ -367,6 +373,6 @@
 
 @media (min-width: 1200px) {  
   .ant-layout, .ant-layout * {
-    background-color:  #ffffff;
+    background-color: #ffffff;
   }
 }
