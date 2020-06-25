@@ -19,11 +19,10 @@ class Cart extends Component {
         }
     }
     render() {
-        const { customer, shippingAddress, creditCard, products } = this.props
+        const { shippingAddress, creditCard, products } = this.props
         return (
             <Layout>
                 <Content className="content">
-                    <p> Carrito de: {customer} </p>
                     <Row>
                         <Col xs={{ span: 24 }} lg={{ span: 12 }}>
                             {/* <ProductCard product={product} /> */}

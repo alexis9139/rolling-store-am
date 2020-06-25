@@ -14,9 +14,9 @@ const { Search } = Input;
 const menu = (
     <Menu>
         <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="#">
+            <a target="_blank" rel="noopener noreferrer" href="https://rolling-store-am.netlify.app/">
                 Configuración
-        </a>
+            </a>
         </Menu.Item>
         <Menu.Divider />
         <Menu.Item className="estilo-salir" onClick={() => firebaseApp.auth().signOut()}>
@@ -125,16 +125,12 @@ class CustomHeader extends Component {
                     <Col xs={{ span: 24 }} lg={{ span: 5 }}>
                         <div className='header-greetings'>
                             Bienvenido {firebaseApp.auth().currentUser.displayName}
-                            {/* <Avatar className="estilo-foto-perfil"
-                                src={firebaseApp.auth().currentUser.photoURL} >
-                            </Avatar>
-                            <LogoutOutlined className="estilo-salir" onClick={() => firebaseApp.auth().signOut()} /> */}
                             <Dropdown overlay={menu}>
-                                <a onClick={e => e.preventDefault()}>
+                                <span onClick={e => e.preventDefault()}>
                                     <Avatar className="estilo-foto-perfil"
                                         src={firebaseApp.auth().currentUser.photoURL} >
                                     </Avatar>
-                                </a>
+                                </span>
                             </Dropdown>
                         </div>
                     </Col>

@@ -13,7 +13,7 @@ import {
 
 export default class GroupShare extends Component {
     getId(prodId) {
-        return `http://localhost:3000/product/${prodId}`
+        return `https://rolling-store-am.netlify.app/product/${prodId}`
     }
     render() {
         const id = this.props.id;

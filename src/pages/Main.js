@@ -12,7 +12,7 @@ export default class Main extends Component {
                 <Content className="content">
                     {
                         products.length === 0 ?
-                            <div>Cargando...</div>
+                            <div>Ya casi esta todo listo</div>
                             :
                             <>
                                 {/* <Caro /> */}
