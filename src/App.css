@@ -59,6 +59,7 @@
 
 .header{
   color: var(--text) !important;
+  height: 100% !important;
 }
 
 .header-logo {
@@ -71,9 +72,7 @@
   position: relative;
 }
 
-.header{
-  color: var(--text) !important;
-}
+
 
 .header-logo {
   height: 60px;
@@ -89,7 +88,9 @@
 .header-greetings {
   display: flex;
   justify-content: center;
-  font-size: 16px;
+  color: yellow;
+  font-size: 12px;
+
 }
 
 .clear-icon {

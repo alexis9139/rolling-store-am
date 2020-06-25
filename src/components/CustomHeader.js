@@ -107,7 +107,7 @@ class CustomHeader extends Component {
                             <img src={logo} className='header-logo' alt='logo' onClick={this.setRedirectToMain} />
                         </Link>
                     </Col>
-                    <Col xs={{ span: 18 }} lg={{ span: 16 }}>
+                    <Col xs={{ span: 19 }} lg={{ span: 16 }}>
                         <div className='header-search'>
                             {this.renderRedirectToResults()}
                             <Search
@@ -126,7 +126,7 @@ class CustomHeader extends Component {
                             }
                         </div>
                     </Col>
-                    <Col xs={{ span: 1 }} lg={{ span: 5 }}>
+                    <Col xs={{ span: 24 }} lg={{ span: 5 }}>
                         <div className='header-greetings'>
                             Bienvenido {firebaseApp.auth().currentUser.displayName}
                             {/* <Avatar className="estilo-foto-perfil"
