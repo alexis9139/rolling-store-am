@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
 import { Layout, Row, Col, Input, Avatar } from 'antd';
-// import { Redirect } from 'react-router-dom';
 import { Redirect, Link } from 'react-router-dom'
 import { getInfoCustomer } from '../reducers';
 import { connect } from 'react-redux';
@@ -97,7 +96,6 @@ class CustomHeader extends Component {
     }
 
     render() {
-        // const { customer } = this.props;
 
         return (
             <Header className='header'>
@@ -109,7 +107,7 @@ class CustomHeader extends Component {
                             <img src={logo} className='header-logo' alt='logo' onClick={this.setRedirectToMain} />
                         </Link>
                     </Col>
-                    <Col xs={{ span: 19 }} lg={{ span: 16 }}>
+                    <Col xs={{ span: 18 }} lg={{ span: 16 }}>
                         <div className='header-search'>
                             {this.renderRedirectToResults()}
                             <Search
@@ -128,8 +126,7 @@ class CustomHeader extends Component {
                             }
                         </div>
                     </Col>
-                    <Col xs={{ span: 0 }} lg={{ span: 5 }}>
-
+                    <Col xs={{ span: 1 }} lg={{ span: 5 }}>
                         <div className='header-greetings'>
                             Bienvenido {firebaseApp.auth().currentUser.displayName}
                             {/* <Avatar className="estilo-foto-perfil"

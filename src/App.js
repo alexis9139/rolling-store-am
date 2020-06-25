@@ -17,14 +17,8 @@ import Error404 from './pages/Error404';
 import 'react-credit-cards/es/styles-compiled.css';
 import { connect } from 'react-redux';
 import { getVisibleProducts } from './reducers/products'
-// import Login from './pages/Login'
-
-// import firebase from "firebase/app"
-// import { firebaseApp } from "./Firebase";
 import { firebaseApp } from './Firebase';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
-
-
 
 const NoMatchPage = () => {
   return (
@@ -36,18 +30,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // username: 'Alex',
-      // products: [],
       results: [],
       term: '',
-      // isLoggedIn: false,
-      // userFacebooks: {}
       isSignedIn: false
-
     }
     this.updateTerm = this.updateTerm.bind(this);
     this.updateList = this.updateList.bind(this);
-    // this.setUserFacebook = this.setUserFacebook.bind(this);
   }
 
   uiConfig = {
@@ -64,8 +52,6 @@ class App extends Component {
     }
   }
 
-
-
   componentDidMount = () => {
     firebaseApp.auth().onAuthStateChanged(user => {
       this.setState({ isSignedIn: !!user })
@@ -73,17 +59,11 @@ class App extends Component {
     })
   }
 
-
-
-
-
-
   updateTerm(term) {
     this.setState({ term })
   }
 
   updateList(newList, term) {
-    // const { products } = this.state;
     term !== '' ?
       this.setState({
         results: newList,
@@ -93,20 +73,11 @@ class App extends Component {
       this.setState({ results: [] })
   }
 
-
-
-
-
-
-
-
   render() {
     const { term, results } = this.state;
     const { products } = this.props
     const updateTerm = this.updateTerm.bind(this);
     const updateList = this.updateList.bind(this);
-
-
 
     return (
       <>
@@ -118,7 +89,6 @@ class App extends Component {
               updateList={updateList}
               products={products}
             />
-
             <Switch>
               <Route exact path="/results">
                 <div className='App-container'>
@@ -127,7 +97,6 @@ class App extends Component {
                   />
                 </div>
               </Route>
-
               <Route exact
                 path="/product/:id"
                 render={props =>
@@ -136,7 +105,6 @@ class App extends Component {
                   </div>
                 }>
               </Route>
-
               <Route exact
                 path="/cart"
                 render={props =>
@@ -145,14 +113,12 @@ class App extends Component {
                   </div>
                 }>
               </Route>
-
               <Route exact path="/success">
                 <div className='App-container'>
                   <Success
                   />
                 </div>
               </Route>
-
               <Route exact path="/">
                 <div className='App-container'>
                   <Main
@@ -160,11 +126,9 @@ class App extends Component {
                   />
                 </div>
               </Route>
-
               {/* PAGINA ERROR */}
               <Route component={NoMatchPage} />
             </Switch>
-
             <CustomFooter />
           </Router>
         ) :
@@ -178,20 +142,6 @@ class App extends Component {
       </>
     )
   }
-  // else {
-  //   return (
-  //     <Router>
-  //       <Switch>
-  //         <Route path="/" exact>
-  //           <div className="App-container">
-  //             <Login isLoggedIn={this.state.isLoggedIn} setIsLogin={setIsLogin} setUserFacebook={setUserFacebook} />
-  //             {/* <Login visible={visible} setVisible={setVisible} isLoggedIn={isLoggedIn} setIsLogin={setIsLogin} /> */}
-  //           </div>
-  //         </Route>
-  //       </Switch>
-  //     </Router>
-  //   );
-  // }
 }
 
 const mapStateToProps = state => ({
