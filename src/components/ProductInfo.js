@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import WhatsApp from '../components/ShareWhatsApp';
 import GroupShare from '../components/GroupShare';
 import Video from '../components/Video';
-import { HeartTwoTone } from '@ant-design/icons';
+// import { HeartTwoTone } from '@ant-design/icons';
 import Puntaje from '../components/Puntaje';
 import {
     // Magnifier,
@@ -44,7 +44,7 @@ class ProductInfo extends Component {
                                     imageAlt="Example"
                                     largeImageSrc={this.getPhoto(id)} // Optional
                                 /> */}
-                                <SideBySideMagnifier style={{ height: '500px' }} className="producto-info-imagen-dimensiones" alwaysInPlace fillAlignTop fillAvailableSpace={true} imageSrc={this.getPhoto(id)} />
+                                <SideBySideMagnifier className="producto-info-imagen-dimensiones" alwaysInPlace fillAlignTop fillAvailableSpace={true} imageSrc={this.getPhoto(id)} />
                             </div>
                         </Col>
                         <br />
@@ -65,7 +65,7 @@ class ProductInfo extends Component {
                                 <br />
                                 <div style={{ textAlign: 'left' }}><strong>Descripción: </strong>{description}</div>
                                 <br />
-                                <p><Puntaje /> - <HeartTwoTone twoToneColor="#a0d911" /></p>
+                                <p><Puntaje /></p>
                                 {/* <WhatsApp /> */}
                                 <span><GroupShare id={id} /></span>
                                 <Video video={video} />

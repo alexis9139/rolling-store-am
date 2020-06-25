@@ -183,7 +183,7 @@
 
 /*-------------------------------------------------------------------*/
 .cartDetails {
-  background-color: var(--secondary);
+  background-color: var(--text);
   padding: 15px;
   margin: 20px;
 }
