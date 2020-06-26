@@ -20,7 +20,7 @@ const initialState = {
     quantityById: {},
     creditCard: '',
     shippingAddress: '',
-    customer: 'Alexis'
+    customer: ''
 }
 
 const addedIds = (state = initialState.addedIds, action) => {
@@ -79,7 +79,7 @@ const cart = (state = initialState, action) => {
             const newState = {
                 addedIds: state.addedIds,
                 quantityById: state.quantityById,
-                customer: state.customer,
+                customer: action.payload.userName,
                 creditCard: action.payload.newCreditCard,
                 shippingAddress: action.payload.newShippingAddress
             }

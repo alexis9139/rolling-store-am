@@ -6,6 +6,7 @@ import { checkoutCart } from '../actions'
 import { getTotal } from '../reducers'
 import Credit from './CreditCard';
 import { Link } from 'react-router-dom'
+import { firebaseApp } from '../Firebase'
 
 const { Group } = Radio;
 
@@ -28,6 +29,7 @@ class CartDetails extends Component {
         // const { product, updateCart } = this.props
         // const { total, updateCart } = this.props
         const { total, checkoutCart } = this.props
+        const userName = firebaseApp.auth().currentUser.displayName;
         // const radioStyle = { display: 'block' }
         return (
             <Fragment>
@@ -54,7 +56,7 @@ class CartDetails extends Component {
                         {/* <Button onClick={() => updateCart(shippingAddress, creditCard)}>
                             Confirmar compra
                         </Button> */}
-                        <Button onClick={() => checkoutCart(shippingAddress, creditCard)}>
+                        <Button onClick={() => checkoutCart(shippingAddress, creditCard, userName)}>
                             Confirmar compra
                         </Button>
                     </Link>

@@ -12,8 +12,9 @@ import {
 } from "react-share";
 
 export default class GroupShare extends Component {
-    getId(prodId) {
-        return `https://rolling-store-am.netlify.app/product/${prodId}`
+    getId() {
+        // return `https://rolling-store-am.netlify.app/product/${prodId}`
+        return `https://rolling-store-am.netlify.app`
     }
     render() {
         const id = this.props.id;
@@ -21,7 +22,7 @@ export default class GroupShare extends Component {
             <span className="grupo-share">
                 <div className="Demo__some-network">
                     <WhatsappShareButton
-                        url={this.getId(id)}
+                        url={this.getId()}
                         title={"Mira nuestro producto: "}
                         separator=":: "
                         className="Demo__some-network__share-button"
@@ -32,7 +33,7 @@ export default class GroupShare extends Component {
                 </div>
                 <div className="Demo__some-network">
                     <FacebookShareButton
-                        url={this.getId(id)}
+                        url={this.getId()}
                         title={"Mira nuestro producto: "}
                         separator=":: "
                         className="Demo__some-network__share-button"
@@ -43,7 +44,7 @@ export default class GroupShare extends Component {
                 </div>
                 <div className="Demo__some-network">
                     <TwitterShareButton
-                        url={this.getId(id)}
+                        url={this.getId()}
                         title={"Mira nuestro producto: "}
                         separator=":: "
                         className="Demo__some-network__share-button"
