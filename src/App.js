@@ -42,7 +42,7 @@ class App extends Component {
     signInFlow: "popup",
     signInOptions: [
       firebaseApp.auth.GoogleAuthProvider.PROVIDER_ID,
-      firebaseApp.auth.FacebookAuthProvider.PROVIDER_ID,
+      // firebaseApp.auth.FacebookAuthProvider.PROVIDER_ID,
       // firebaseApp.auth.TwitterAuthProvider.PROVIDER_ID,
       firebaseApp.auth.GithubAuthProvider.PROVIDER_ID,
       firebaseApp.auth.EmailAuthProvider.PROVIDER_ID,
