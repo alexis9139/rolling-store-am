@@ -17,7 +17,7 @@ export default class GroupShare extends Component {
         return `https://rolling-store-am.netlify.app`
     }
     render() {
-        const id = this.props.id;
+        // const id = this.props.id;
         return (
             <span className="grupo-share">
                 <div className="Demo__some-network">
